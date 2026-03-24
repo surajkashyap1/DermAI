@@ -3,15 +3,12 @@ from __future__ import annotations
 import base64
 import io
 import logging
+import re
 from dataclasses import dataclass
-from pathlib import Path
-from threading import Lock
-from uuid import uuid4
+from typing import Literal
 
-import numpy as np
+import httpx
 from PIL import Image, ImageChops, ImageFilter, ImageOps, ImageStat
-from huggingface_hub import hf_hub_download
-import tensorflow as tf
 
 from app.core.config import settings
 from app.schemas.contracts import ImageAnalysis, VisionPrediction, VisionQuality
@@ -20,6 +17,36 @@ from app.schemas.contracts import ImageAnalysis, VisionPrediction, VisionQuality
 ALLOWED_CONTENT_TYPES = {"image/jpeg", "image/png", "image/webp"}
 MAX_UPLOAD_BYTES = 8 * 1024 * 1024
 logger = logging.getLogger("dermai.api.vision")
+
+HF_LABEL_MAP = {
+    "akiec": "actinic_keratosis",
+    "bcc": "basal_cell_carcinoma",
+    "bkl": "benign_keratosis",
+    "df": "dermatofibroma",
+    "mel": "melanoma",
+    "nv": "melanocytic_nevus",
+    "vasc": "vascular_lesion",
+}
+
+LABEL_SUMMARIES = {
+    "actinic_keratosis": "The model scored this image closest to an actinic-keratosis pattern.",
+    "basal_cell_carcinoma": "The model scored this image closest to a basal-cell-carcinoma pattern.",
+    "benign_keratosis": "The model scored this image closest to a benign-keratosis pattern.",
+    "dermatofibroma": "The model scored this image closest to a dermatofibroma pattern.",
+    "melanoma": "The model scored this image closest to a melanoma pattern.",
+    "melanocytic_nevus": "The model scored this image closest to a melanocytic-nevus pattern.",
+    "vascular_lesion": "The model scored this image closest to a vascular-lesion pattern.",
+}
+
+LABEL_RATIONALES = {
+    "actinic_keratosis": "Hosted skin-lesion classifier probability for an actinic-keratosis pattern.",
+    "basal_cell_carcinoma": "Hosted skin-lesion classifier probability for a basal-cell-carcinoma pattern.",
+    "benign_keratosis": "Hosted skin-lesion classifier probability for a benign-keratosis pattern.",
+    "dermatofibroma": "Hosted skin-lesion classifier probability for a dermatofibroma pattern.",
+    "melanoma": "Hosted skin-lesion classifier probability for a melanoma pattern.",
+    "melanocytic_nevus": "Hosted skin-lesion classifier probability for a melanocytic-nevus pattern.",
+    "vascular_lesion": "Hosted skin-lesion classifier probability for a vascular-lesion pattern.",
+}
 
 
 @dataclass
@@ -31,12 +58,6 @@ class HeuristicMetrics:
     center_darkness: float
 
 
-def generated_dir() -> Path:
-    path = Path(__file__).resolve().parents[3] / "generated" / "vision"
-    path.mkdir(parents=True, exist_ok=True)
-    return path
-
-
 def image_to_data_url(image: Image.Image) -> str:
     buffer = io.BytesIO()
     image.save(buffer, format="PNG")
@@ -45,11 +66,6 @@ def image_to_data_url(image: Image.Image) -> str:
 
 
 class VisionService:
-    def __init__(self) -> None:
-        self._model = None
-        self._model_path: str | None = None
-        self._model_lock = Lock()
-
     def validate_upload(self, content_type: str | None, payload: bytes) -> None:
         if content_type not in ALLOWED_CONTENT_TYPES:
             raise ValueError("Unsupported image type. Use JPEG, PNG, or WEBP.")
@@ -60,11 +76,6 @@ class VisionService:
         image = Image.open(io.BytesIO(payload)).convert("RGB")
         image.thumbnail((768, 768))
         return image
-
-    def save_upload(self, image: Image.Image) -> Path:
-        output_path = generated_dir() / f"{uuid4()}.png"
-        image.save(output_path, format="PNG")
-        return output_path
 
     def _mask_from_image(self, image: Image.Image) -> Image.Image:
         grayscale = ImageOps.grayscale(image)
@@ -118,64 +129,64 @@ class VisionService:
             return "medium"
         return "low"
 
-    def _load_external_model(self):
-        if self._model is not None:
-            return self._model
+    def _normalize_label(self, label: str) -> str:
+        compact = label.strip().lower()
+        if compact in HF_LABEL_MAP:
+            return HF_LABEL_MAP[compact]
+        compact = re.sub(r"[^a-z0-9]+", "_", compact).strip("_")
+        return compact or "unknown_lesion_pattern"
 
-        with self._model_lock:
-            if self._model is not None:
-                return self._model
-
-            model_path = hf_hub_download(
-                repo_id=settings.vision_model_repo_id,
-                filename=settings.vision_model_filename,
-            )
-            self._model_path = model_path
-            self._model = tf.keras.models.load_model(model_path)
-            logger.info(
-                "Loaded external vision model repo_id=%s filename=%s",
-                settings.vision_model_repo_id,
-                settings.vision_model_filename,
-            )
-            return self._model
-
-    def _preprocess_for_external_model(self, image: Image.Image) -> np.ndarray:
-        resized = image.resize((224, 224))
-        array = np.array(resized, dtype=np.float32)
-        array = array[..., ::-1]
-        array[..., 0] -= 103.939
-        array[..., 1] -= 116.779
-        array[..., 2] -= 123.68
-        return np.expand_dims(array, axis=0)
-
-    def _classify_with_external_model(
+    def _classify_with_hosted_model(
         self,
-        image: Image.Image,
+        payload: bytes,
+        content_type: str | None,
     ) -> tuple[str, list[VisionPrediction], float]:
-        model = self._load_external_model()
-        batch = self._preprocess_for_external_model(image)
-        prediction = float(model.predict(batch, verbose=0)[0][0])
-        malignant_probability = max(0.0, min(prediction, 1.0))
-        benign_probability = 1.0 - malignant_probability
+        if not settings.vision_api_key:
+            raise RuntimeError("Vision API key is not configured.")
 
-        threshold = settings.vision_model_threshold
-        predicted_label = "malignant_pattern" if malignant_probability >= threshold else "benign_pattern"
-        predicted_confidence = malignant_probability if predicted_label == "malignant_pattern" else benign_probability
+        headers = {
+            "Authorization": f"Bearer {settings.vision_api_key}",
+        }
+        files = {
+            "inputs": ("upload-image", payload, content_type or "application/octet-stream"),
+        }
 
-        top_predictions = [
-            VisionPrediction(
-                label="malignant_pattern",
-                confidence=round(malignant_probability, 4),
-                rationale="Integrated HAM10000-based binary classifier score for a malignant pattern.",
-            ),
-            VisionPrediction(
-                label="benign_pattern",
-                confidence=round(benign_probability, 4),
-                rationale="Integrated HAM10000-based binary classifier score for a benign pattern.",
-            ),
-        ]
-        top_predictions.sort(key=lambda item: item.confidence, reverse=True)
-        return predicted_label, top_predictions, round(predicted_confidence, 4)
+        with httpx.Client(timeout=settings.vision_timeout_seconds) as client:
+            response = client.post(
+                f"{settings.vision_api_base_url.rstrip('/')}/{settings.vision_model_id}",
+                headers=headers,
+                files=files,
+            )
+
+        if response.status_code in {401, 403}:
+            raise RuntimeError("Hosted vision authentication failed.")
+        if response.status_code == 503:
+            raise RuntimeError("Hosted vision model is currently unavailable.")
+
+        response.raise_for_status()
+        payload_json = response.json()
+        if not isinstance(payload_json, list) or not payload_json:
+            raise RuntimeError("Hosted vision model returned an unexpected response.")
+
+        top_predictions: list[VisionPrediction] = []
+        for item in payload_json[:5]:
+            raw_label = str(item.get("label", "")).strip()
+            normalized_label = self._normalize_label(raw_label)
+            confidence = round(float(item.get("score", 0.0)), 4)
+            top_predictions.append(
+                VisionPrediction(
+                    label=normalized_label,
+                    confidence=confidence,
+                    rationale=LABEL_RATIONALES.get(
+                        normalized_label,
+                        "Hosted skin-lesion classifier probability for this lesion pattern.",
+                    ),
+                )
+            )
+
+        predicted_label = top_predictions[0].label
+        predicted_confidence = top_predictions[0].confidence
+        return predicted_label, top_predictions, predicted_confidence
 
     def quality(self, metrics: HeuristicMetrics) -> VisionQuality:
         issues: list[str] = []
@@ -204,22 +215,18 @@ class VisionService:
         return composite
 
     def summarize(self, label: str, quality: VisionQuality) -> tuple[str, str]:
-        label_summaries = {
-            "malignant_pattern": "The integrated classifier scored this image closer to a malignant-pattern class than a benign one.",
-            "benign_pattern": "The integrated classifier scored this image closer to a benign-pattern class than a malignant one.",
-        }
+        summary = LABEL_SUMMARIES.get(label, f"The model scored this image closest to a {label.replace('_', ' ')} pattern.")
         caution = "This image result is best used as visual context for the chat."
         if not quality.usable:
             caution += " Image quality issues can reduce reliability."
-        return label_summaries[label], caution
+        return summary, caution
 
     def analyze(self, payload: bytes, content_type: str | None) -> ImageAnalysis:
         self.validate_upload(content_type, payload)
         image = self.load_image(payload)
-        self.save_upload(image)
 
         metrics = self.analyze_metrics(image)
-        label, top_predictions, confidence = self._classify_with_external_model(image)
+        label, top_predictions, confidence = self._classify_with_hosted_model(payload, content_type)
         quality = self.quality(metrics)
         summary, caution = self.summarize(label, quality)
         overlay = self.overlay(image)

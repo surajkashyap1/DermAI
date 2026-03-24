@@ -29,9 +29,10 @@ class Settings(BaseSettings):
     retrieval_reranker_model: str = "answerdotai/answerai-colbert-small-v1"
     retrieval_candidate_multiplier: int = 5
     retrieval_candidate_min: int = 12
-    vision_model_repo_id: str = "devatreya/skin-lesion-resnet50"
-    vision_model_filename: str = "resnet50_best.h5"
-    vision_model_threshold: float = 0.5
+    vision_api_key: str = ""
+    vision_model_id: str = "sreejith782/Dermacare_Skin_Lesion_classification"
+    vision_api_base_url: str = "https://api-inference.huggingface.co/models"
+    vision_timeout_seconds: float = 60.0
 
 
 settings = Settings()
