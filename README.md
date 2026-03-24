@@ -58,7 +58,7 @@ DERMAI_GROQ_MODEL=llama-3.1-8b-instant
 DERMAI_QDRANT_URL=http://localhost:6333
 DERMAI_VISION_API_KEY=your_hugging_face_token
 DERMAI_VISION_MODEL_ID=sreejith782/Dermacare_Skin_Lesion_classification
-DERMAI_VISION_API_BASE_URL=https://api-inference.huggingface.co/models
+DERMAI_VISION_API_BASE_URL=https://router.huggingface.co/hf-inference/models
 DERMAI_VISION_TIMEOUT_SECONDS=60
 ```
 

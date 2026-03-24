@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     retrieval_candidate_min: int = 12
     vision_api_key: str = ""
     vision_model_id: str = "sreejith782/Dermacare_Skin_Lesion_classification"
-    vision_api_base_url: str = "https://api-inference.huggingface.co/models"
+    vision_api_base_url: str = "https://router.huggingface.co/hf-inference/models"
     vision_timeout_seconds: float = 60.0
 
 
