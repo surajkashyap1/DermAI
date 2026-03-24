@@ -70,27 +70,17 @@ Response:
 {
   "sessionId": "generated-session-id",
   "status": "completed",
-  "message": "Image analysis completed with the current demo heuristic vision pipeline. You can now ask a follow-up question in the same session.",
+  "message": "Image analysis completed. You can now ask a follow-up question in the same session.",
   "imageAnalysis": {
-    "analysisType": "demo_heuristic",
-    "modelName": "dermai-vision-demo-v1",
-    "predictedClass": "indeterminate_pigmented_pattern",
-    "confidence": 0.42,
-    "confidenceBand": "low",
-    "summary": "The image contains pigment structure, but the pattern is not strong enough for a confident visual interpretation.",
-    "caution": "This Phase 4 vision result is a demo heuristic analysis, not a trained diagnostic classifier.",
+    "predictedClass": "benign_pattern",
+    "confidence": 0.96,
+    "confidenceBand": "high",
+    "summary": "The classifier scored this image closer to a benign-pattern class than a malignant one.",
+    "caution": "This image result is best used as visual context for the chat.",
     "overlayImageDataUrl": "data:image/png;base64,..."
   }
 }
 ```
-
-## GET /citations/{citation_id}
-
-Returns the retrieved citation payload by chunk identifier when available. Missing citations now return `404`.
-
-## GET /session/{session_id}
-
-Returns the current in-memory session state, including saved messages and image analysis if one was attached.
 
 ## Error Handling
 

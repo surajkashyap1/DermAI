@@ -1,0 +1,52 @@
+{
+  "title": "Diagnosis and treatment of basal cell carcinoma: European consensus-based interdisciplinary guidelines.",
+  "source": "European journal of cancer (Oxford, England : 1990)",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2019,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/31288208/",
+  "pmid": "31288208",
+  "authors": [
+    "Ketty Peris",
+    "Maria Concetta Fargnoli",
+    "Claus Garbe",
+    "Roland Kaufmann",
+    "Lars Bastholt",
+    "Nicole Basset Seguin",
+    "Veronique Bataille",
+    "Veronique Del Marmol",
+    "Reinhard Dummer",
+    "Catherine A Harwood",
+    "Axel Hauschild",
+    "Christoph H\u00f6ller",
+    "Merete Haedersdal",
+    "Josep Malvehy",
+    "Mark R Middleton",
+    "Colin A Morton",
+    "Eduardo Nagore",
+    "Alexander J Stratigos",
+    "Rolf-Markus Szeimies",
+    "Luca Tagliaferri",
+    "Myrto Trakatelli",
+    "Iris Zalaudek",
+    "Alexander Eggermont",
+    "Jean Jacques Grob",
+    "European Dermatology Forum (EDF), the European Association of Dermato-Oncology (EADO) and the European Organization for Research and Treatment of Cancer (EORTC)"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "bcc",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "basal cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Basal cell carcinoma (BCC) is the most common malignant tumour in white populations. Multidisciplinary experts from the European Dermatology Forum, the European Association of Dermato-Oncology and the European Organization of Research and Treatment of Cancer collaborated to develop recommendations on diagnosis and treatment of BCC. A new classification into 'easy-to-treat (common) BCC and 'difficult-to-treat' BCC is proposed. Diagnosis is based on clinicodermatoscopic features for 'easy-to-treat' BCCs. Histopathological confirmation is mandatory in ambiguous lesions and in BCCs located in high-risk areas. The first-line treatment of 'easy-to-treat' BCC is complete surgery. Microscopically controlled surgery shall be offered for high-risk BCC, recurrent BCC and BCC in critical anatomical sites. Topical therapies (5% imiquimod, 5% fluorouracil) and destructive approaches (curettage, electrocautery, cryotherapy, laser ablation) should be considered in patients with low-risk superficial BCC. Photodynamic therapy is an effective treatment for superficial BCC and thin nodular BCC. The therapy for a 'difficult-to-treat' BCC should preferentially be discussed by a multidisciplinary tumour board. Hedgehog inhibitors, vismodegib or sonidegib, should be offered to patients with locally advanced and metastatic BCCs. Immunotherapy with anti-programmed cell death 1 (PD-1) antibodies is a promising therapeutic option, currently being investigated in clinical trials. Radiotherapy represents a valid alternative to surgery for BCC on the face, especially in elderly patients. In patients with naevoid basal cell carcinoma syndrome (NBCCS), close surveillance and regular skin examinations are required to diagnose and treat BCCs at early stage. Long-term follow-up is recommended in patients with high-risk BCC subtypes, high-risk sites, multiple BCCs and NBCCS."
+    }
+  ]
+}

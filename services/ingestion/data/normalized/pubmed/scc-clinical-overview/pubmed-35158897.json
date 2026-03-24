@@ -1,0 +1,37 @@
+{
+  "title": "Update on Management Recommendations for Advanced Cutaneous Squamous Cell Carcinoma.",
+  "source": "Cancers",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2022,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/35158897/",
+  "pmid": "35158897",
+  "authors": [
+    "Jes\u00fas Garc\u00eda-Foncillas",
+    "Antonio Tejera-Vaquerizo",
+    "Onofre Sanmart\u00edn",
+    "Federico Rojo",
+    "Javier Mestre",
+    "Salvador Mart\u00edn",
+    "Ignacio Azinovic",
+    "Ricard Mes\u00eda"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "scc",
+    "non-melanoma skin cancer",
+    "guideline",
+    "management"
+  ],
+  "disease_tags": [
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Cutaneous squamous cell carcinoma (cSCC) is the second most common form of skin cancer, the incidence of which has risen over the last years. Although cSCC rarely metastasizes, early detection and treatment of primary tumours are critical to limit progression and local invasion. Several prognostic factors related to patients' clinicopathologic profile and tumour features have been identified as high-risk markers and included in the stratification scales, but their association with regional control or survival is uncertain. Therefore, decision-making on the diagnosis and management of cSCC should be made based on each individual patient's characteristics. Recent advances in non-invasive imaging techniques and molecular testing have enhanced clinical diagnostic accuracy. Surgical excision is the mainstay of local treatment, whereas radiotherapy (RT) is recommended for patients with inoperable disease or in specific circumstances. Novel systemic treatments including immunotherapies and targeted therapies have changed the therapeutic landscape for cSCC. The anti-PD-1 agent cemiplimab is currently the only FDA/EMA-approved first-line therapy for patients with locally advanced or metastatic cSCC who are not candidates for curative surgery or RT. Given the likelihood of recurrence and the increased risk of developing multiple cSCC, close follow-up should be performed during the first years of treatment and continued long-term surveillance is warranted."
+    }
+  ]
+}

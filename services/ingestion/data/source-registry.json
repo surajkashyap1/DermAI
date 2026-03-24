@@ -1,0 +1,463 @@
+{
+  "version": "v1",
+  "sources": [
+    {
+      "id": "melanoma-overview",
+      "path": "services/ingestion/data/sources/melanoma-overview.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "melanoma",
+          "basics",
+          "skin cancer"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer"
+        ]
+      }
+    },
+    {
+      "id": "melanoma-warning-signs",
+      "path": "services/ingestion/data/sources/melanoma-warning-signs.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "melanoma",
+          "triage",
+          "lesions"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer"
+        ]
+      }
+    },
+    {
+      "id": "benign-lesion-patterns",
+      "path": "services/ingestion/data/sources/benign-lesion-patterns.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "benign",
+          "nevi",
+          "seborrheic keratosis"
+        ],
+        "disease_tags": [
+          "benign nevus",
+          "seborrheic keratosis",
+          "melanoma differential"
+        ]
+      }
+    },
+    {
+      "id": "biopsy-and-follow-up",
+      "path": "services/ingestion/data/sources/biopsy-and-follow-up.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "biopsy",
+          "follow-up",
+          "melanoma"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer",
+          "pigmented lesion"
+        ]
+      }
+    },
+    {
+      "id": "dermatology-triage",
+      "path": "services/ingestion/data/sources/dermatology-triage.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "safety_policy",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "safety",
+          "triage",
+          "escalation"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer",
+          "dermatology emergency"
+        ]
+      }
+    },
+    {
+      "id": "keratinocyte-cancers",
+      "path": "services/ingestion/data/sources/keratinocyte-cancers.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "bcc",
+          "scc",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "basal cell carcinoma",
+          "squamous cell carcinoma",
+          "skin cancer"
+        ]
+      }
+    },
+    {
+      "id": "pigmented-lesion-differential",
+      "path": "services/ingestion/data/sources/pigmented-lesion-differential.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "clinician",
+        "topic_tags": [
+          "pigmented lesions",
+          "differential",
+          "dermoscopy"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "nevus",
+          "seborrheic keratosis"
+        ]
+      }
+    },
+    {
+      "id": "surveillance-and-prevention",
+      "path": "services/ingestion/data/sources/surveillance-and-prevention.md",
+      "loader": "structured_text",
+      "enabled": true,
+      "metadata": {
+        "source_type": "curated_note",
+        "authority_level": "internal_seed",
+        "audience": "patient",
+        "topic_tags": [
+          "surveillance",
+          "prevention",
+          "uv exposure"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer"
+        ]
+      }
+    },
+    {
+      "id": "pubmed-melanoma-risk-factors",
+      "path": "services/ingestion/data/sources/pubmed-melanoma-risk-factors.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "source_type": "pubmed_json",
+        "authority_level": "external_reference",
+        "audience": "clinician",
+        "topic_tags": [
+          "melanoma",
+          "risk factors",
+          "epidemiology"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer"
+        ]
+      }
+    },
+    {
+      "id": "pubmed-41015051",
+      "path": "services/ingestion/data/normalized/pubmed/melanoma-live-smoke/pubmed-41015051.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "melanoma",
+          "risk factors"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-31288208",
+      "path": "services/ingestion/data/normalized/pubmed/bcc-features/pubmed-31288208.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "bcc",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "basal cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-31706938",
+      "path": "services/ingestion/data/normalized/pubmed/bcc-features/pubmed-31706938.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "bcc",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "basal cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-32973163",
+      "path": "services/ingestion/data/normalized/pubmed/scc-features/pubmed-32973163.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "scc",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-40454639",
+      "path": "services/ingestion/data/normalized/pubmed/scc-features/pubmed-40454639.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "scc",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-18613881",
+      "path": "services/ingestion/data/normalized/pubmed/pigmented-lesions/pubmed-18613881.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "pigmented lesions",
+          "dermoscopy"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "nevus",
+          "seborrheic keratosis"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-24075551",
+      "path": "services/ingestion/data/normalized/pubmed/pigmented-lesions/pubmed-24075551.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "pigmented lesions",
+          "dermoscopy"
+        ],
+        "disease_tags": [
+          "melanoma",
+          "nevus",
+          "seborrheic keratosis"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-26029015",
+      "path": "services/ingestion/data/normalized/pubmed/bcc-clinical-overview/pubmed-26029015.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "bcc",
+          "non-melanoma skin cancer",
+          "guideline",
+          "management"
+        ],
+        "disease_tags": [
+          "basal cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-37604067",
+      "path": "services/ingestion/data/normalized/pubmed/bcc-clinical-overview/pubmed-37604067.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "bcc",
+          "non-melanoma skin cancer",
+          "guideline",
+          "management"
+        ],
+        "disease_tags": [
+          "basal cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-27358187",
+      "path": "services/ingestion/data/normalized/pubmed/scc-clinical-overview/pubmed-27358187.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "scc",
+          "non-melanoma skin cancer",
+          "guideline",
+          "management"
+        ],
+        "disease_tags": [
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-35158897",
+      "path": "services/ingestion/data/normalized/pubmed/scc-clinical-overview/pubmed-35158897.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "scc",
+          "non-melanoma skin cancer",
+          "guideline",
+          "management"
+        ],
+        "disease_tags": [
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-38791879",
+      "path": "services/ingestion/data/normalized/pubmed/scc-clinical-overview/pubmed-38791879.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "scc",
+          "non-melanoma skin cancer",
+          "guideline",
+          "management"
+        ],
+        "disease_tags": [
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-33572373",
+      "path": "services/ingestion/data/normalized/pubmed/actinic-keratosis-overview/pubmed-33572373.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "actinic keratosis",
+          "field cancerization",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "actinic keratosis",
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-38351246",
+      "path": "services/ingestion/data/normalized/pubmed/actinic-keratosis-overview/pubmed-38351246.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "actinic keratosis",
+          "field cancerization",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "actinic keratosis",
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    },
+    {
+      "id": "pubmed-38783539",
+      "path": "services/ingestion/data/normalized/pubmed/actinic-keratosis-overview/pubmed-38783539.json",
+      "loader": "pubmed_json",
+      "enabled": true,
+      "metadata": {
+        "topic_tags": [
+          "actinic keratosis",
+          "field cancerization",
+          "non-melanoma skin cancer"
+        ],
+        "disease_tags": [
+          "actinic keratosis",
+          "squamous cell carcinoma",
+          "skin cancer"
+        ],
+        "audience": "clinician"
+      }
+    }
+  ]
+}

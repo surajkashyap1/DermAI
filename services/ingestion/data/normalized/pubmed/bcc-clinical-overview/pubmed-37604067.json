@@ -1,0 +1,62 @@
+{
+  "title": "European consensus-based interdisciplinary guideline for diagnosis and treatment of basal cell carcinoma-update 2023.",
+  "source": "European journal of cancer (Oxford, England : 1990)",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2023,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/37604067/",
+  "pmid": "37604067",
+  "authors": [
+    "Ketty Peris",
+    "Maria Concetta Fargnoli",
+    "Roland Kaufmann",
+    "Petr Arenberger",
+    "Lars Bastholt",
+    "Nicole Basset Seguin",
+    "Veronique Bataille",
+    "Lieve Brochez",
+    "Veronique Del Marmol",
+    "Reinhard Dummer",
+    "Ana-Marie Forsea",
+    "Caroline Gaudy-Marqueste",
+    "Catherine A Harwood",
+    "Axel Hauschild",
+    "Christoph H\u00f6ller",
+    "Lidija Kandolf",
+    "Nicole W J Kellerners-Smeets",
+    "Aimilios Lallas",
+    "Ulrike Leiter",
+    "Josep Malvehy",
+    "Branka Marinovi\u0107",
+    "Zeljko Mijuskovic",
+    "David Moreno-Ramirez",
+    "Eduardo Nagore",
+    "Paul Nathan",
+    "Alexander J Stratigos",
+    "Eggert Stockfleth",
+    "Luca Tagliaferri",
+    "Myrto Trakatelli",
+    "Ricardo Vieira",
+    "Iris Zalaudek",
+    "Claus Garbe",
+    "EADO\u201dA, EDF\u201dB, ESTRO\u201dC, UEMS\u201dD and EADV\u201dE"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "bcc",
+    "non-melanoma skin cancer",
+    "guideline",
+    "management"
+  ],
+  "disease_tags": [
+    "basal cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Basal cell carcinoma (BCC) is the most common malignant tumour in white populations. Multidisciplinary experts from European Association of Dermato-Oncology (EADO), European Dermatology Forum, European Society for Radiotherapy and Oncology (ESTRO), Union Europ\u00e9enne des M\u00e9decins Sp\u00e9cialistes, and the European Academy of Dermatology and Venereology developed updated recommendations on diagnosis and treatment of BCC. BCCs were categorised into 'easy-to-treat'\u00a0(common) and 'difficult-to-treat'\u00a0according to the new EADO clinical classification. Diagnosis is based on clinico-dermatoscopic features, although histopathological confirmation is mandatory in equivocal lesions. The first-line treatment of BCC is complete surgery. Micrographically controlled surgery shall be offered in high-risk and recurrent BCC, and BCC located on critical anatomical sites. Topical therapies and destructive approaches can be considered in patients with low-risk superficial BCC. Photodynamic therapy is an effective treatment for superficial and low-risk nodular BCCs. Management of 'difficult-to-treat'\u00a0BCCs should be discussed by a multidisciplinary tumour board. Hedgehog inhibitors (HHIs), vismodegib or sonidegib, should be offered to patients with locally advanced and metastatic BCC. Immunotherapy with anti-PD1 antibodies (cemiplimab) is a second-line treatment in patients with a\u00a0progression of disease, contraindication, or intolerance to HHI therapy. Radiotherapy represents a valid alternative in patients who are not candidates for or decline surgery, especially elderly patients. Electrochemotherapy may be offered when surgery or radiotherapy is contraindicated. In Gorlin patients, regular skin examinations are required to diagnose and treat BCCs at an\u00a0early stage. Long-term follow-up is recommended in patients with high-risk BCC, multiple BCCs, and Gorlin syndrome."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "dataset_id": "pigmented-lesions",
+  "query": "pigmented lesion differential melanoma nevus dermoscopy",
+  "count": 266,
+  "ids": [
+    "18613881",
+    "24075551"
+  ],
+  "articles": [
+    {
+      "uid": "18613881",
+      "title": "Dermoscopy: basic concepts.",
+      "fulljournalname": "International journal of dermatology",
+      "pubdate": "2008",
+      "authors": [
+        {
+          "name": "Gabriella Campos-do-Carmo"
+        },
+        {
+          "name": "Marcia Ramos-e-Silva"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Dermoscopy is a very useful technique for the analysis of pigmented skin lesions. It represents a link between clinical and histological views, permitting an earlier diagnosis of skin melanoma. It also helps in the diagnosis of many other pigmented skin lesions, such as seborrheic keratosis, pigmented basal cell carcinoma, hemangioma, blue nevus, atypical nevus, and mole, which can often clinically simulate melanoma. In this article, dermoscopy is reviewed from its history to the basic concepts of the interpretation of dermoscopic images. The goal is to introduce this subject to those not yet familiar with it, in order to instigate and encourage the training and practice of this technique of growing importance for everyday usage."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "18613881"
+        }
+      ]
+    },
+    {
+      "uid": "24075551",
+      "title": "Blue lesions.",
+      "fulljournalname": "Dermatologic clinics",
+      "pubdate": "2013",
+      "authors": [
+        {
+          "name": "Caterina Longo"
+        },
+        {
+          "name": "Alon Scope"
+        },
+        {
+          "name": "Aimilios Lallas"
+        },
+        {
+          "name": "Iris Zalaudek"
+        },
+        {
+          "name": "Elvira Moscarella"
+        },
+        {
+          "name": "Stefano Gardini"
+        },
+        {
+          "name": "Giuseppe Argenziano"
+        },
+        {
+          "name": "Giovanni Pellacani"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Blue color is found in a wide range of malignant and benign melanocytic and nonmelanocytic lesions and in lesions that result from penetration of exogenous materials, such as radiation or amalgam tattoo or traumatic penetration of particles. Discriminating between different diagnostic entities that display blue color relies on careful patient examination and lesion assessment. Dermoscopically, the extent, distribution, and patterns created by blue color can help diagnose lesions with specificity and differentiate between benign and malignant entities. This article provides an overview of the main diagnoses whereby blue color can be found, providing simple management rules for these lesions."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "24075551"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=pigmented+lesion+differential+melanoma+nevus+dermoscopy"
+}

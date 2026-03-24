@@ -1,47 +1,20 @@
 "use client";
 
-import type { ChatResponse, HealthResponse, UploadImageResponse, VersionResponse } from "@dermai/shared";
+import type { SessionMessage, UploadImageResponse } from "@dermai/shared";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ApiError, getHealthStatus, getVersion, sendChat, uploadImage } from "../lib/api";
-
-const starterQuestions = [
-  "What are warning signs that a pigmented lesion needs urgent review?",
-  "How do dermatologists distinguish benign nevi from melanoma clinically?",
-  "What follow-up would you recommend after a low-confidence classifier result?",
-];
-
-const imageFollowUpQuestions = [
-  "What does this image result mean?",
-  "When should a lesion like this be reviewed urgently?",
-  "What follow-up is reasonable if the image result stays uncertain?",
-];
+import { ApiError, sendChat, uploadImage } from "../lib/api";
 
 export function DemoShell() {
-  const [health, setHealth] = useState<HealthResponse | null>(null);
-  const [version, setVersion] = useState<VersionResponse | null>(null);
   const [message, setMessage] = useState("");
-  const [chatResult, setChatResult] = useState<ChatResponse | null>(null);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [conversation, setConversation] = useState<SessionMessage[]>([]);
   const [uploadResult, setUploadResult] = useState<UploadImageResponse | null>(null);
   const [loadingChat, setLoadingChat] = useState(false);
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [localPreview, setLocalPreview] = useState<string | null>(null);
   const [chatError, setChatError] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  const suggestedQuestions = uploadResult ? imageFollowUpQuestions : starterQuestions;
-
-  useEffect(() => {
-    void (async () => {
-      try {
-        const [nextHealth, nextVersion] = await Promise.all([getHealthStatus(), getVersion()]);
-        setHealth(nextHealth);
-        setVersion(nextVersion);
-      } catch {
-        setHealth(null);
-        setVersion(null);
-      }
-    })();
-  }, []);
 
   useEffect(() => {
     return () => {
@@ -53,22 +26,40 @@ export function DemoShell() {
 
   async function handleChatSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!message.trim()) {
+    const nextMessage = message.trim();
+    if (!nextMessage) {
       return;
     }
 
     setLoadingChat(true);
     setChatError(null);
+    setMessage("");
+
+    const userTurn: SessionMessage = {
+      id: `user-${Date.now()}`,
+      role: "user",
+      content: nextMessage,
+    };
+    setConversation((current) => [...current, userTurn]);
 
     try {
       const result = await sendChat({
-        message,
+        message: nextMessage,
         mode: uploadResult ? "image_follow_up" : "chat",
-        sessionId: uploadResult?.sessionId ?? chatResult?.sessionId,
+        sessionId: uploadResult?.sessionId ?? sessionId ?? undefined,
       });
-
-      setChatResult(result);
+      setSessionId(result.sessionId);
+      setConversation((current) => [
+        ...current,
+        {
+          id: `assistant-${Date.now()}`,
+          role: "assistant",
+          content: result.answer,
+        },
+      ]);
     } catch (error) {
+      setMessage(nextMessage);
+      setConversation((current) => current.filter((item) => item.id !== userTurn.id));
       if (error instanceof ApiError) {
         const requestId = error.requestId ? ` Request ID: ${error.requestId}` : "";
         setChatError(`${error.message}.${requestId}`);
@@ -100,6 +91,7 @@ export function DemoShell() {
     try {
       const result = await uploadImage(formData);
       setUploadResult(result);
+      setSessionId(result.sessionId);
     } catch (error) {
       if (error instanceof ApiError) {
         const requestId = error.requestId ? ` Request ID: ${error.requestId}` : "";
@@ -113,154 +105,111 @@ export function DemoShell() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.35fr_0.95fr]">
-      <section className="glass-card rounded-[2rem] p-6">
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <span className="eyebrow">Dermatology Chat</span>
-          <span className="rounded-full border border-black/10 px-3 py-1 text-xs text-[var(--muted)]">
-            {health ? `API ${health.status}` : "API unavailable"}
-          </span>
-          <span className="rounded-full border border-black/10 px-3 py-1 text-xs text-[var(--muted)]">
-            {version ? version.version : "Version unknown"}
-          </span>
-        </div>
-
+    <div className="grid gap-6 lg:grid-cols-[1.7fr_0.85fr]">
+      <section className="glass-card flex min-h-[78vh] flex-col rounded-[2.25rem] p-6 md:p-8">
         <div className="space-y-4">
-          <div className="rounded-[1.5rem] border border-black/10 bg-white/70 p-5">
-            <p className="mb-2 text-sm font-semibold">Ask a dermatology question</p>
-            <p className="text-sm leading-6 text-[var(--muted)]">
-              The current demo supports grounded dermatology chat, image upload, and same-session
-              multimodal follow-up. The vision model remains a cautious heuristic preview.
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">DermAI</h1>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--muted)] md:text-base">
+              Ask about skin cancer, lesion warning signs, or upload an image and continue the conversation with visual context.
             </p>
           </div>
 
-          <form onSubmit={handleChatSubmit} className="space-y-4">
-            <div className="rounded-[1.5rem] border border-black/10 bg-white p-3 shadow-[0_14px_40px_rgba(23,31,26,0.06)]">
-              <textarea
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                onKeyDown={handleComposerKeyDown}
-                className="min-h-28 w-full resize-none bg-transparent px-2 py-2 text-base outline-none"
-                placeholder="Ask about melanoma risk factors, lesion appearance, or follow-up guidance."
-              />
-
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-black/8 px-2 pt-3">
-                <div className="space-y-1 text-sm text-[var(--muted)]">
-                  <p>
-                    {uploadResult
-                      ? "Multimodal follow-up is active for this session."
-                      : "Workflow-backed dermatology chat is live."}
-                  </p>
-                  <p className="text-xs">Press Enter to send. Use Shift+Enter for a new line.</p>
-                </div>
-                <button
-                  type="submit"
-                  disabled={loadingChat || !message.trim()}
-                  className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  {loadingChat ? "Sending..." : "Send"}
-                </button>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {suggestedQuestions.map((question) => (
-                <button
-                  key={question}
-                  type="button"
-                  onClick={() => setMessage(question)}
-                  className="rounded-full border border-black/10 bg-white px-3 py-2 text-xs text-[var(--muted)] transition hover:border-[var(--accent)] hover:text-[var(--foreground)]"
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
-          </form>
-
           {uploadResult?.imageAnalysis ? (
-            <div className="rounded-[1.5rem] border border-black/10 bg-[var(--accent-soft)]/50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                Active Image Context
-              </p>
-              <p className="mt-2 text-sm leading-6 text-[var(--foreground)]">
-                Follow-up questions in this session will use the uploaded image result as non-diagnostic context.
-                Current visual pattern: {uploadResult.imageAnalysis.predictedClass}.
+            <div className="rounded-[1.5rem] border border-white/10 bg-[var(--accent-soft)] p-4">
+              <p className="text-sm leading-6 text-[var(--foreground)]">
+                Image context attached. Current visual pattern: {uploadResult.imageAnalysis.predictedClass}.
               </p>
             </div>
           ) : null}
 
           {chatError ? (
-            <div className="rounded-[1.5rem] border border-[#d6432b]/20 bg-[#fff3ef] p-4 text-sm leading-6 text-[#8f2f1f]">
+            <div className="rounded-[1.5rem] border border-[rgba(255,182,189,0.18)] bg-[var(--danger-soft)] p-4 text-sm leading-6 text-[var(--danger-fg)]">
               {chatError}
             </div>
           ) : null}
+        </div>
 
-          <div className="rounded-[1.5rem] border border-black/10 bg-[#f8faf8] p-5">
-            <p className="mb-2 text-sm font-semibold">Assistant response</p>
-            <p className="text-sm leading-6 text-[var(--foreground)]">
-              {chatResult?.answer ?? "No answer yet. Submit a dermatology question to exercise the current grounded workflow."}
-            </p>
+        <div className="mt-4 flex flex-1 flex-col gap-4">
+          <div className="flex-1 rounded-[1.75rem] border border-white/10 bg-[rgba(10,21,27,0.92)] p-4 md:p-5">
+            <div className="flex h-full flex-col justify-end">
+              <div className="space-y-4">
+                {conversation.length === 0 ? (
+                  <div className="rounded-[1.25rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-5 text-sm leading-7 text-[var(--muted)]">
+                    Start the conversation by asking a question. Your previous messages and answers will stay here.
+                  </div>
+                ) : (
+                  conversation.map((entry) => (
+                    <div
+                      key={entry.id}
+                      className={
+                        entry.role === "user"
+                          ? "ml-auto w-fit max-w-[85%] rounded-[1.4rem] rounded-br-md bg-[var(--accent)] px-4 py-3 text-sm leading-7 text-[#041015] md:text-base"
+                          : "mr-auto max-w-[92%] rounded-[1.4rem] rounded-bl-md border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm leading-7 text-[var(--foreground)] md:text-base"
+                      }
+                    >
+                      {entry.content}
+                    </div>
+                  ))
+                )}
 
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
-              <div className="rounded-2xl border border-black/8 bg-white px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                  Confidence
-                </p>
-                <p className="mt-2 text-sm">{chatResult?.confidence ?? "Pending"}</p>
-              </div>
-              <div className="rounded-2xl border border-black/8 bg-white px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                  Safety
-                </p>
-                <p className="mt-2 text-sm">
-                  {chatResult?.disclaimer ?? "DermAI will attach a medical disclaimer to grounded answers."}
-                </p>
+                {loadingChat ? (
+                  <div className="mr-auto max-w-[92%] rounded-[1.4rem] rounded-bl-md border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm text-[var(--muted)]">
+                    Thinking...
+                  </div>
+                ) : null}
               </div>
             </div>
-
-            {(chatResult?.followUps?.length ?? 0) > 0 ? (
-              <div className="mt-4 rounded-[1.25rem] border border-black/8 bg-white px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                  Suggested follow-ups
-                </p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {chatResult?.followUps.map((followUp) => (
-                    <button
-                      key={followUp}
-                      type="button"
-                      onClick={() => setMessage(followUp)}
-                      className="rounded-full border border-black/10 px-3 py-2 text-xs text-[var(--muted)] transition hover:border-[var(--accent)] hover:text-[var(--foreground)]"
-                    >
-                      {followUp}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : null}
           </div>
+
+          <form onSubmit={handleChatSubmit}>
+            <div className="rounded-[1.75rem] border border-white/10 bg-[var(--surface)] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)]">
+              <textarea
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                onKeyDown={handleComposerKeyDown}
+                className="min-h-28 w-full resize-none bg-transparent px-2 py-2 text-base text-[var(--foreground)] outline-none placeholder:text-[var(--muted)]/80"
+                placeholder="Type your dermatology question here."
+              />
+
+              <div className="flex items-center justify-between gap-3 border-t border-white/10 px-2 pt-3">
+                <p className="text-xs text-[var(--muted)]">
+                  {uploadResult ? "Image context is attached to this session." : "Press Enter to send."}
+                </p>
+                <button
+                  type="submit"
+                  disabled={loadingChat || !message.trim()}
+                  className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[#041015] transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {loadingChat ? "Sending..." : "Send"}
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </section>
 
       <aside className="space-y-6">
-        <section className="glass-card rounded-[2rem] p-6">
-          <div className="mb-4 flex items-center justify-between">
-            <span className="eyebrow">Vision Panel</span>
-            <span className="text-xs text-[var(--muted)]">Demo heuristic vision</span>
+        <section className="glass-card rounded-[2.25rem] p-6">
+          <div className="mb-4">
+            <p className="text-sm font-semibold text-[var(--foreground)]">Add an image</p>
+            <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+              Optional visual context for the chat session.
+            </p>
           </div>
 
-          <label className="flex min-h-56 cursor-pointer flex-col items-center justify-center rounded-[1.75rem] border border-dashed border-[var(--accent)]/35 bg-white/65 px-6 py-8 text-center transition hover:border-[var(--accent)]">
+          <label className="flex min-h-56 cursor-pointer flex-col items-center justify-center rounded-[1.75rem] border border-dashed border-[var(--accent)]/35 bg-[var(--surface-soft)] px-6 py-8 text-center transition hover:border-[var(--accent)]">
             <input type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
             <div className="mb-3 rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]">
-              Lesion Upload
+              Image Upload
             </div>
-            <p className="text-base font-semibold">Drop in a lesion image or click to upload</p>
+            <p className="text-base font-semibold">Drop in an image or click to upload</p>
             <p className="mt-2 max-w-xs text-sm leading-6 text-[var(--muted)]">
-              Upload returns a demo heuristic lesion-analysis result with an overlay preview, then unlocks
-              same-session dermatology follow-up questions.
+              The uploaded image stays attached to the chat so you can ask follow-up questions with visual context.
             </p>
           </label>
 
-          <div className="mt-4 rounded-[1.5rem] border border-black/10 bg-white p-4 text-sm">
+          <div className="mt-4 rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4 text-sm">
             <p className="font-semibold">Upload status</p>
             <p className="mt-2 text-[var(--muted)]">
               {loadingUpload
@@ -270,14 +219,14 @@ export function DemoShell() {
           </div>
 
           {uploadError ? (
-            <div className="mt-4 rounded-[1.5rem] border border-[#d6432b]/20 bg-[#fff3ef] p-4 text-sm leading-6 text-[#8f2f1f]">
+            <div className="mt-4 rounded-[1.5rem] border border-[rgba(255,182,189,0.18)] bg-[var(--danger-soft)] p-4 text-sm leading-6 text-[var(--danger-fg)]">
               {uploadError}
             </div>
           ) : null}
 
           {uploadResult?.imageAnalysis ? (
             <div className="mt-4 space-y-4">
-              <div className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                   Vision Result
                 </p>
@@ -285,41 +234,21 @@ export function DemoShell() {
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                   {uploadResult.imageAnalysis.summary}
                 </p>
-                <div className="mt-4 grid gap-3 md:grid-cols-2">
-                  <div className="rounded-2xl border border-black/8 bg-[#f9f7f2] px-4 py-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                      Confidence
-                    </p>
-                    <p className="mt-2 text-sm">
-                      {uploadResult.imageAnalysis.confidenceBand} ({uploadResult.imageAnalysis.confidence})
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-black/8 bg-[#f9f7f2] px-4 py-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                      Model
-                    </p>
-                    <p className="mt-2 text-sm">{uploadResult.imageAnalysis.modelName}</p>
-                  </div>
+                <div className="mt-4 rounded-2xl border border-white/10 bg-[var(--surface-soft)] px-4 py-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                    Confidence
+                  </p>
+                  <p className="mt-2 text-sm">
+                    {uploadResult.imageAnalysis.confidenceBand} ({uploadResult.imageAnalysis.confidence})
+                  </p>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-[var(--muted)]">
                   {uploadResult.imageAnalysis.caution}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {imageFollowUpQuestions.map((followUp) => (
-                    <button
-                      key={followUp}
-                      type="button"
-                      onClick={() => setMessage(followUp)}
-                      className="rounded-full border border-black/10 px-3 py-2 text-xs text-[var(--muted)] transition hover:border-[var(--accent)] hover:text-[var(--foreground)]"
-                    >
-                      {followUp}
-                    </button>
-                  ))}
-                </div>
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+                <div className="rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                     Original
                   </p>
@@ -334,7 +263,7 @@ export function DemoShell() {
                     />
                   ) : null}
                 </div>
-                <div className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+                <div className="rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                     Overlay
                   </p>
@@ -349,13 +278,13 @@ export function DemoShell() {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                   Top Predictions
                 </p>
                 <div className="mt-3 space-y-3">
                   {uploadResult.imageAnalysis.topPredictions.map((prediction) => (
-                    <div key={prediction.label} className="rounded-[1rem] border border-black/8 bg-[#f9f7f2] px-4 py-3">
+                    <div key={prediction.label} className="rounded-[1rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-3">
                       <div className="flex items-center justify-between gap-3">
                         <p className="text-sm font-semibold">{prediction.label}</p>
                         <p className="text-xs text-[var(--muted)]">{prediction.confidence}</p>
@@ -366,21 +295,21 @@ export function DemoShell() {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[var(--surface)] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                   Image Quality
                 </p>
                 <div className="mt-3 grid gap-3 md:grid-cols-2">
-                  <div className="rounded-[1rem] border border-black/8 bg-[#f9f7f2] px-4 py-3 text-sm">
+                  <div className="rounded-[1rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm">
                     Contrast: {uploadResult.imageAnalysis.quality.contrast}
                   </div>
-                  <div className="rounded-[1rem] border border-black/8 bg-[#f9f7f2] px-4 py-3 text-sm">
+                  <div className="rounded-[1rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm">
                     Sharpness: {uploadResult.imageAnalysis.quality.sharpness}
                   </div>
-                  <div className="rounded-[1rem] border border-black/8 bg-[#f9f7f2] px-4 py-3 text-sm">
+                  <div className="rounded-[1rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm">
                     Coverage: {uploadResult.imageAnalysis.quality.lesionCoverage}
                   </div>
-                  <div className="rounded-[1rem] border border-black/8 bg-[#f9f7f2] px-4 py-3 text-sm">
+                  <div className="rounded-[1rem] border border-white/10 bg-[var(--surface-soft)] px-4 py-3 text-sm">
                     Asymmetry: {uploadResult.imageAnalysis.quality.asymmetry}
                   </div>
                 </div>
@@ -396,43 +325,6 @@ export function DemoShell() {
               </div>
             </div>
           ) : null}
-        </section>
-
-        <section className="glass-card rounded-[2rem] p-6">
-          <div className="mb-4 flex items-center justify-between">
-            <span className="eyebrow">Evidence Panel</span>
-            <span className="text-xs text-[var(--muted)]">
-              {uploadResult ? "Image-conditioned retrieval live" : "Grounded retrieval live"}
-            </span>
-          </div>
-
-          <div className="space-y-3">
-            {(chatResult?.citations ?? []).length === 0 ? (
-              <div className="rounded-[1.5rem] border border-black/10 bg-white p-4 text-sm text-[var(--muted)]">
-                Retrieved evidence cards will appear here after a chat request returns grounded support.
-              </div>
-            ) : (
-              chatResult?.citations.map((citation) => (
-                <div key={citation.id} className="rounded-[1.5rem] border border-black/10 bg-white p-4">
-                  <p className="text-sm font-semibold">{citation.title}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.12em] text-[var(--muted)]">
-                    {citation.source}
-                  </p>
-                  <p className="mt-3 text-sm text-[var(--muted)]">{citation.snippet}</p>
-                  {citation.href ? (
-                    <a
-                      href={citation.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-3 inline-flex text-xs font-semibold text-[var(--accent)]"
-                    >
-                      Open source link
-                    </a>
-                  ) : null}
-                </div>
-              ))
-            )}
-          </div>
         </section>
       </aside>
     </div>

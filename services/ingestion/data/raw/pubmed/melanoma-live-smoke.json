@@ -1,0 +1,128 @@
+{
+  "dataset_id": "melanoma-live-smoke",
+  "query": "melanoma early recognition risk factors",
+  "count": 75,
+  "ids": [
+    "41015051"
+  ],
+  "articles": [
+    {
+      "uid": "41015051",
+      "pubdate": "2025 Oct 11",
+      "epubdate": "2025 Sep 24",
+      "source": "Lancet",
+      "authors": [
+        {
+          "name": "GBD 2023 Cancer Collaborators",
+          "authtype": "CollectiveName",
+          "clusterid": ""
+        }
+      ],
+      "lastauthor": "GBD 2023 Cancer Collaborators",
+      "title": "The global, regional, and national burden of cancer, 1990-2023, with forecasts to 2050: a systematic analysis for the Global Burden of Disease Study 2023.",
+      "sorttitle": "global regional and national burden of cancer 1990 2023 with forecasts to 2050 a systematic analysis for the global burden of disease study 2023",
+      "volume": "406",
+      "issue": "10512",
+      "pages": "1565-1586",
+      "lang": [
+        "eng"
+      ],
+      "nlmuniqueid": "2985213R",
+      "issn": "0140-6736",
+      "essn": "1474-547X",
+      "pubtype": [
+        "Journal Article"
+      ],
+      "recordstatus": "PubMed - indexed for MEDLINE",
+      "pubstatus": "256",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "idtypen": 1,
+          "value": "41015051"
+        },
+        {
+          "idtype": "mid",
+          "idtypen": 8,
+          "value": "NIHMS2113905"
+        },
+        {
+          "idtype": "pmc",
+          "idtypen": 8,
+          "value": "PMC12687902"
+        },
+        {
+          "idtype": "pmcid",
+          "idtypen": 5,
+          "value": "pmc-id: PMC12687902;manuscript-id: NIHMS2113905;"
+        },
+        {
+          "idtype": "doi",
+          "idtypen": 3,
+          "value": "10.1016/S0140-6736(25)01635-6"
+        },
+        {
+          "idtype": "pii",
+          "idtypen": 4,
+          "value": "S0140-6736(25)01635-6"
+        }
+      ],
+      "history": [
+        {
+          "pubstatus": "received",
+          "date": "2024/10/24 00:00"
+        },
+        {
+          "pubstatus": "revised",
+          "date": "2025/06/10 00:00"
+        },
+        {
+          "pubstatus": "accepted",
+          "date": "2025/08/07 00:00"
+        },
+        {
+          "pubstatus": "medline",
+          "date": "2025/10/12 00:33"
+        },
+        {
+          "pubstatus": "pubmed",
+          "date": "2025/09/28 01:02"
+        },
+        {
+          "pubstatus": "entrez",
+          "date": "2025/09/27 18:52"
+        },
+        {
+          "pubstatus": "pmc-release",
+          "date": "2025/12/09 00:00"
+        }
+      ],
+      "references": [],
+      "attributes": [
+        "Has Abstract"
+      ],
+      "pmcrefcount": 75,
+      "fulljournalname": "Lancet (London, England)",
+      "elocationid": "doi: 10.1016/S0140-6736(25)01635-6",
+      "doctype": "citation",
+      "srccontriblist": [],
+      "booktitle": "",
+      "medium": "",
+      "edition": "",
+      "publisherlocation": "",
+      "publishername": "",
+      "srcdate": "",
+      "reportnumber": "",
+      "availablefromurl": "",
+      "locationlabel": "",
+      "doccontriblist": [],
+      "docdate": "",
+      "bookname": "",
+      "chapter": "",
+      "sortpubdate": "2025/10/11 00:00",
+      "sortfirstauthor": "GBD 2023 Cancer Collaborators",
+      "vernaculartitle": ""
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=melanoma+early+recognition+risk+factors"
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Topical Calcipotriol Plus 5-Fluorouracil in the Treatment of Actinic Keratosis, Bowen's Disease, and Squamous Cell Carcinoma: A Systematic Review.",
+  "source": "Journal of cutaneous medicine and surgery",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2024,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/38783539/",
+  "pmid": "38783539",
+  "authors": [
+    "Adam H Lapidus",
+    "Sangho Lee",
+    "Zhao Feng Liu",
+    "Sarah Smithson",
+    "Christopher Y Chew",
+    "Douglas Gin"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "actinic keratosis",
+    "field cancerization",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "actinic keratosis",
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "BACKGROUND/OBJECTIVES",
+      "text": "Actinic keratoses (AK) are premalignant skin lesions caused by chronic sun exposure, topically managed by 5-fluorouracil (5-FU), diclofenac 3% gel, and imiquimod. Despite their effectiveness, long treatment duration and severe adverse local skin reactions have limited patient concordance. Calcipotriol has recently been used as a combination agent for existing topical AK treatments. A systematic review was performed to determine the clinical efficacy of 5-FU and calcipotriol for the treatment of AK, Bowen's disease, and squamous cell carcinoma (SCC)."
+    },
+    {
+      "title": "METHODS",
+      "text": "A systematic literature search was conducted on Medline, Embase, and Cochrane Library. Among the 84 records screened, 12 were retrieved for full-text review and 8 were included in the final analysis."
+    },
+    {
+      "title": "RESULTS",
+      "text": "Among the 8 studies, there were 214 control patients and 288 patients who received the intervention. The combination 5% 5-FU with calcipotriol resulted in a significant reduction in the number of AKs on the face, scalp, right upper extremity, and left upper extremity for all sites at 8 weeks ( P < .0001). No significant difference in SCC incidence was observed at 1 or 2 years, but there was a significant reduction observed at 3 years for SCC on face and scalp. No study assessed the combination for Bowen's disease."
+    },
+    {
+      "title": "CONCLUSIONS",
+      "text": "Combination 5% 5-FU with calcipotriol is an effective treatment for Aks; however, future trials may consider longer treatment and follow-up periods for the treatment and prevention of AK, SCC in situ, and SCC."
+    }
+  ]
+}

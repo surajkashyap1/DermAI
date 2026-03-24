@@ -1,8 +1,12 @@
 # Benign Lesion Patterns
 Source: DermAI Clinical Notes
+SourceType: curated_note
+Authority: internal_seed
+Audience: clinician
 Year: 2026
 Href: https://dermai.local/sources/benign-lesion-patterns
 Tags: benign, nevi, seborrheic keratosis
+DiseaseTags: benign nevus, seborrheic keratosis, melanoma differential
 
 ## Benign nevi
 Many benign melanocytic nevi are symmetric, evenly pigmented, and stable over time. Stability matters: a lesion that has looked similar for years is generally less concerning than one that has recently changed.

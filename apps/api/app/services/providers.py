@@ -17,6 +17,7 @@ class GenerationRequest:
     mode: str
     conversation_history: str = ""
     image_context: str = ""
+    evidence_summary: str = ""
 
 
 @dataclass
@@ -37,9 +38,7 @@ class ExtractiveFallbackProvider:
         summary = " ".join(evidence_lines[:4])
         image_prefix = f"Image context: {request.image_context}. " if request.image_context else ""
         answer = (
-            "DermAI is using its local fallback answer mode because no hosted provider is configured. "
-            f"{image_prefix}Based on the retrieved dermatology evidence, the key points are: "
-            f"{summary}"
+            f"{image_prefix}Here is a direct summary based on the available dermatology material: {summary}"
         )
         return GenerationResult(answer=answer, provider="fallback", model="extractive-summary")
 
@@ -57,12 +56,18 @@ class GroqProvider:
                 {
                     "role": "system",
                     "content": (
-                        "You are DermAI, a cautious dermatology evidence assistant. "
-                        "Use only the supplied evidence. If the evidence is limited, say so clearly. "
+                        "You are DermAI, a dermatology assistant for normal users. "
+                        "The app supports image upload, and users can ask follow-up questions about an uploaded image. "
+                        "Use only the supplied evidence. "
+                        "Write in clear, plain language that a non-expert can understand. "
+                        "Do not sound robotic, defensive, or repetitive. "
                         "Do not give definitive diagnosis language. "
                         "If the user asks for a definition, start with a direct one-sentence definition. "
                         "If image context is supplied, treat it as non-diagnostic supporting context only. "
-                        "Keep the answer concise and product-grade."
+                        "Do not keep repeating advice to see a dermatologist unless the situation is clearly urgent. "
+                        "Do not mention confidence levels, evidence coverage, or internal system wording unless the user explicitly asks. "
+                        "If the user asks what the app can do, mention both chat and image upload. "
+                        "Keep the answer concise, direct, and natural."
                     ),
                 },
                 {
@@ -72,12 +77,15 @@ class GroqProvider:
                         f"Mode: {request.mode}\n"
                         f"Conversation History:\n{request.conversation_history or 'None'}\n\n"
                         f"Image Context:\n{request.image_context or 'None'}\n\n"
+                        f"Evidence Coverage Summary:\n{request.evidence_summary or 'None'}\n\n"
                         f"Evidence:\n{request.retrieved_context}\n\n"
                         f"Confidence: {request.confidence}\n"
                         f"Intent: {request.intent}\n\n"
                         "Write a concise grounded answer in two short paragraphs or fewer. "
+                        "Answer the covered parts directly and in plain English. "
                         "If image context is present, explain how it may relate to the retrieved evidence without treating it as confirmed diagnosis. "
-                        "Mention uncertainty when confidence is low. "
+                        "If the question is broad and the material only covers part of it, answer the part that is clearly supported without using phrases like low-confidence or evidence coverage. "
+                        "Do not add warnings or disclaimers unless the prompt is clearly about urgent danger signs. "
                         "Do not mention information that is not in the evidence."
                     ),
                 },

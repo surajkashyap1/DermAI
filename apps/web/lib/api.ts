@@ -1,9 +1,7 @@
 import type {
   ChatRequest,
   ChatResponse,
-  HealthResponse,
   UploadImageResponse,
-  VersionResponse,
 } from "@dermai/shared";
 
 const apiBaseUrl =
@@ -42,14 +40,6 @@ async function safeFetch<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   return (await response.json()) as T;
-}
-
-export async function getHealthStatus() {
-  return safeFetch<HealthResponse>("/health");
-}
-
-export async function getVersion() {
-  return safeFetch<VersionResponse>("/version");
 }
 
 export async function sendChat(payload: ChatRequest) {

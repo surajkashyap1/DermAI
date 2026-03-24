@@ -1,0 +1,42 @@
+{
+  "title": "Cutaneous Squamous Cell Carcinoma: From Pathophysiology to Novel Therapeutic Approaches.",
+  "source": "Biomedicines",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2021,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/33572373/",
+  "pmid": "33572373",
+  "authors": [
+    "Luca Fania",
+    "Dario Didona",
+    "Francesca Romana Di Pietro",
+    "Sofia Verkhovskaia",
+    "Roberto Morese",
+    "Giovanni Paolino",
+    "Michele Donati",
+    "Francesca Ricci",
+    "Valeria Coco",
+    "Francesco Ricci",
+    "Eleonora Candi",
+    "Damiano Abeni",
+    "Elena Dellambra"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "actinic keratosis",
+    "field cancerization",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "actinic keratosis",
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Cutaneous squamous cell carcinoma (cSCC), a non-melanoma skin cancer, is a keratinocyte carcinoma representing one of the most common cancers with an increasing incidence. cSCC could be in situ (e.g., Bowen's disease) or an invasive form. A significant cSCC risk factor is advanced age, together with cumulative sun exposure, fair skin, prolonged immunosuppression, and previous skin cancer diagnoses. Although most cSCCs can be treated by surgery, a fraction of them recur and metastasize, leading to death. cSCC could arise de novo or be the result of a progression of the actinic keratosis, an in situ carcinoma. The multistage process of cSCC development and progression is characterized by mutations in the genes involved in epidermal homeostasis and by several alterations, such as epigenetic modifications, viral infections, or microenvironmental changes. Thus, cSCC development is a gradual process with several histological- and pathological-defined stages. Dermoscopy and reflectance confocal microscopy enhanced the diagnostic accuracy of cSCC. Surgical excision is the first-line treatment for invasive cSCC. Moreover, radiotherapy may be considered as a primary treatment in patients not candidates for surgery. Extensive studies of cSCC pathogenic mechanisms identified several pharmaceutical targets and allowed the development of new systemic therapies, including immunotherapy with immune checkpoint inhibitors, such as Cemiplimab, and epidermal growth factor receptor inhibitors for metastatic and locally advanced cSCC. Furthermore, the implementation of prevention measures has been useful in patient management."
+    }
+  ]
+}

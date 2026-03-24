@@ -1,0 +1,32 @@
+{
+  "title": "Cutaneous Squamous Cell Carcinoma: An Updated Review.",
+  "source": "Cancers",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2024,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/38791879/",
+  "pmid": "38791879",
+  "authors": [
+    "Rina Jiang",
+    "Mike Fritz",
+    "Syril Keena T Que"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "scc",
+    "non-melanoma skin cancer",
+    "guideline",
+    "management"
+  ],
+  "disease_tags": [
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Representing the second most common skin cancer, the incidence and disease burden of cutaneous squamous cell carcinoma (cSCC) continues to increase. Surgical excision of the primary site effectively cures the majority of cSCC cases. However, an aggressive subset of cSCC persists with clinicopathological features that are indicative of higher recurrence, metastasis, and mortality risks. Acceleration of these features is driven by a combination of genetic and environmental factors. The past several years have seen remarkable progress in shaping the treatment landscape for advanced cSCC. Risk stratification and clinical management is a top priority. This review provides an overview of the current perspectives on cSCC with a focus on staging, treatment, and maintenance strategies, along with future research directions."
+    }
+  ]
+}

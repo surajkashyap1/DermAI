@@ -1,0 +1,244 @@
+{
+  "dataset_id": "scc-features",
+  "query": "cutaneous squamous cell carcinoma clinical features diagnosis",
+  "count": 492,
+  "ids": [
+    "40454639",
+    "32973163"
+  ],
+  "articles": [
+    {
+      "uid": "40454639",
+      "title": "Adjuvant Cemiplimab or Placebo in High-Risk Cutaneous Squamous-Cell Carcinoma.",
+      "fulljournalname": "The New England journal of medicine",
+      "pubdate": "2025",
+      "authors": [
+        {
+          "name": "Danny Rischin"
+        },
+        {
+          "name": "Sandro Porceddu"
+        },
+        {
+          "name": "Fiona Day"
+        },
+        {
+          "name": "Daniel P Brungs"
+        },
+        {
+          "name": "Hayden Christie"
+        },
+        {
+          "name": "James E Jackson"
+        },
+        {
+          "name": "Brian N Stein"
+        },
+        {
+          "name": "Yungpo Bernard Su"
+        },
+        {
+          "name": "Rahul Ladwa"
+        },
+        {
+          "name": "Gerard Adams"
+        },
+        {
+          "name": "Samantha E Bowyer"
+        },
+        {
+          "name": "Zulfiquer Otty"
+        },
+        {
+          "name": "Naoya Yamazaki"
+        },
+        {
+          "name": "Paolo Bossi"
+        },
+        {
+          "name": "Amarnath Challapalli"
+        },
+        {
+          "name": "Axel Hauschild"
+        },
+        {
+          "name": "Annette M Lim"
+        },
+        {
+          "name": "Vishal A Patel"
+        },
+        {
+          "name": "Joanna L Walker"
+        },
+        {
+          "name": "Maite De Liz Vassen Schurmann"
+        },
+        {
+          "name": "Paola Queirolo"
+        },
+        {
+          "name": "Javier Ca\u00f1ueto"
+        },
+        {
+          "name": "Flavio Augusto Ferreira da Silva"
+        },
+        {
+          "name": "Alexander Stratigos"
+        },
+        {
+          "name": "Alexander Guminski"
+        },
+        {
+          "name": "Charles Lin"
+        },
+        {
+          "name": "Fernanda Damian"
+        },
+        {
+          "name": "Lukas Flatz"
+        },
+        {
+          "name": "Anne E Taylor"
+        },
+        {
+          "name": "David R Carr"
+        },
+        {
+          "name": "Samuel Harris"
+        },
+        {
+          "name": "Dmitry Kirtbaya"
+        },
+        {
+          "name": "Ga\u00eblle Quereux"
+        },
+        {
+          "name": "Piotr Rutkowski"
+        },
+        {
+          "name": "Nicole Basset-Seguin"
+        },
+        {
+          "name": "Nikhil I Khushalani"
+        },
+        {
+          "name": "Caroline Robert"
+        },
+        {
+          "name": "Haisong Ju"
+        },
+        {
+          "name": "Camryn Joseph"
+        },
+        {
+          "name": "Shikha Bansal"
+        },
+        {
+          "name": "Chieh-I Chen"
+        },
+        {
+          "name": "Frank Seebach"
+        },
+        {
+          "name": "Suk-Young Yoo"
+        },
+        {
+          "name": "Israel Lowy"
+        },
+        {
+          "name": "Priscila Goncalves"
+        },
+        {
+          "name": "Matthew G Fury"
+        },
+        {
+          "name": "C-POST Trial Investigators"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "BACKGROUND",
+          "text": "Patients who have cutaneous squamous-cell carcinoma with high-risk features are at risk for recurrence after definitive local therapy. The benefit of systemic adjuvant therapy options has not been well established in clinical trials."
+        },
+        {
+          "label": "METHODS",
+          "text": "In a phase 3, randomized trial, we enrolled patients with local or regional cutaneous squamous-cell carcinoma, after surgical resection and postoperative radiotherapy, at high risk for recurrence owing to nodal features (extracapsular extension with largest node \u226520 mm in diameter or at least three involved nodes) or nonnodal features (in-transit metastases, T4 lesion [with bone invasion], perineural invasion, or locally recurrent tumor with \u22651 additional risk feature). Patients were assigned in a 1:1 ratio to receive adjuvant cemiplimab (350 mg) or placebo, administered intravenously every 3 weeks for 12 weeks, followed by a dose increase to 700 mg administered every 6 weeks for up to 36 weeks (\u226448 weeks total). The primary end point was disease-free survival. Secondary end points included freedom from locoregional recurrence, freedom from distant recurrence, and safety."
+        },
+        {
+          "label": "RESULTS",
+          "text": "A total of 415 patients were assigned to cemiplimab (209) or placebo (206). The median follow-up was 24 months. Cemiplimab was superior to placebo with respect to disease-free survival (24 vs. 65 events; hazard ratio for disease recurrence or death, 0.32; 95% confidence interval [CI], 0.20 to 0.51; P<0.001). The estimated 24-month disease-free survival was 87.1% (95% CI, 80.3 to 91.6) with cemiplimab and 64.1% (95% CI, 55.9 to 71.1) with placebo. Cemiplimab led to lower risks of locoregional recurrence (9 events, vs. 40 with placebo; hazard ratio, 0.20; 95% CI, 0.09 to 0.40) and distant recurrence (10 vs. 26 events; hazard ratio, 0.35; 95% CI, 0.17 to 0.72). Adverse events of grade 3 or higher occurred in 23.9% of the patients who received cemiplimab and in 14.2% of those who received placebo; discontinuation due to adverse events occurred in 9.8% and 1.5%, respectively."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Adjuvant cemiplimab therapy led to longer disease-free survival than placebo among patients at high risk for recurrence of cutaneous squamous-cell carcinoma. (Funded by Regeneron Pharmaceuticals and Sanofi; C-POST ClinicalTrials.gov number, NCT03969004.)."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "40454639"
+        }
+      ]
+    },
+    {
+      "uid": "32973163",
+      "title": "Epidermolysis bullosa.",
+      "fulljournalname": "Nature reviews. Disease primers",
+      "pubdate": "2020",
+      "authors": [
+        {
+          "name": "Ajoy Bardhan"
+        },
+        {
+          "name": "Leena Bruckner-Tuderman"
+        },
+        {
+          "name": "Iain L C Chapple"
+        },
+        {
+          "name": "Jo-David Fine"
+        },
+        {
+          "name": "Natasha Harper"
+        },
+        {
+          "name": "Cristina Has"
+        },
+        {
+          "name": "Thomas M Magin"
+        },
+        {
+          "name": "M Peter Marinkovich"
+        },
+        {
+          "name": "John F Marshall"
+        },
+        {
+          "name": "John A McGrath"
+        },
+        {
+          "name": "Jemima E Mellerio"
+        },
+        {
+          "name": "Rex Polson"
+        },
+        {
+          "name": "Adrian H Heagerty"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Epidermolysis bullosa (EB) is an inherited, heterogeneous group of rare genetic dermatoses characterized by mucocutaneous fragility and blister formation, inducible by often minimal trauma. A broad phenotypic spectrum has been described, with potentially severe extracutaneous manifestations, morbidity and mortality. Over 30 subtypes are recognized, grouped into four major categories, based predominantly on the plane of cleavage within the skin and reflecting the underlying molecular abnormality: EB simplex, junctional EB, dystrophic EB and Kindler EB. The study of EB has led to seminal advances in our understanding of cutaneous biology. To date, pathogenetic mutations in 16 distinct genes have been implicated in EB, encoding proteins influencing cellular integrity and adhesion. Precise diagnosis is reliant on correlating clinical, electron microscopic and immunohistological features with mutational analyses. In the absence of curative treatment, multidisciplinary care is targeted towards minimizing the risk of blister formation, wound care, symptom relief and specific complications, the most feared of which - and also the leading cause of mortality - is squamous cell carcinoma. Preclinical advances in cell-based, protein replacement and gene therapies are paving the way for clinical successes with gene correction, raising hopes amongst patients and clinicians worldwide."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "32973163"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=cutaneous+squamous+cell+carcinoma+clinical+features+diagnosis"
+}

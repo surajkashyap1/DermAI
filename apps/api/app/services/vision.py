@@ -2,19 +2,24 @@ from __future__ import annotations
 
 import base64
 import io
+import logging
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal
+from threading import Lock
 from uuid import uuid4
 
+import numpy as np
 from PIL import Image, ImageChops, ImageFilter, ImageOps, ImageStat
+from huggingface_hub import hf_hub_download
+import tensorflow as tf
 
+from app.core.config import settings
 from app.schemas.contracts import ImageAnalysis, VisionPrediction, VisionQuality
 
 
 ALLOWED_CONTENT_TYPES = {"image/jpeg", "image/png", "image/webp"}
 MAX_UPLOAD_BYTES = 8 * 1024 * 1024
-MODEL_NAME = "dermai-vision-demo-v1"
+logger = logging.getLogger("dermai.api.vision")
 
 
 @dataclass
@@ -40,6 +45,11 @@ def image_to_data_url(image: Image.Image) -> str:
 
 
 class VisionService:
+    def __init__(self) -> None:
+        self._model = None
+        self._model_path: str | None = None
+        self._model_lock = Lock()
+
     def validate_upload(self, content_type: str | None, payload: bytes) -> None:
         if content_type not in ALLOWED_CONTENT_TYPES:
             raise ValueError("Unsupported image type. Use JPEG, PNG, or WEBP.")
@@ -108,44 +118,64 @@ class VisionService:
             return "medium"
         return "low"
 
-    def classify(self, metrics: HeuristicMetrics) -> tuple[str, list[VisionPrediction], float]:
-        suspicious = (
-            metrics.asymmetry * 0.45
-            + metrics.center_darkness * 0.2
-            + metrics.lesion_coverage * 0.15
-            + metrics.contrast * 0.2
-        )
-        benign = (1 - metrics.asymmetry) * 0.35 + metrics.sharpness * 0.2 + (1 - metrics.lesion_coverage) * 0.45
-        low_quality = max(0.0, 0.7 - metrics.sharpness) * 0.7 + max(0.0, 0.18 - metrics.contrast) * 0.3
-        indeterminate = 0.55 + abs(suspicious - benign) * -0.35 + metrics.lesion_coverage * 0.15
+    def _load_external_model(self):
+        if self._model is not None:
+            return self._model
 
-        raw_scores = {
-            "suspicious_irregular_pattern": max(suspicious, 0.01),
-            "uniform_benign_like_pattern": max(benign, 0.01),
-            "indeterminate_pigmented_pattern": max(indeterminate, 0.01),
-            "low_quality_capture": max(low_quality, 0.01),
-        }
-        total = sum(raw_scores.values())
-        normalized = {label: round(score / total, 4) for label, score in raw_scores.items()}
-        ordered = sorted(normalized.items(), key=lambda item: item[1], reverse=True)[:3]
+        with self._model_lock:
+            if self._model is not None:
+                return self._model
 
-        rationales = {
-            "suspicious_irregular_pattern": "Higher asymmetry, darker center weighting, and irregular coverage increased this score.",
-            "uniform_benign_like_pattern": "Lower asymmetry and more even visual structure increased this score.",
-            "indeterminate_pigmented_pattern": "The image shows some pigment signal but not a stable enough pattern for stronger confidence.",
-            "low_quality_capture": "Low contrast or softness reduces confidence in any lesion-specific interpretation.",
-        }
+            model_path = hf_hub_download(
+                repo_id=settings.vision_model_repo_id,
+                filename=settings.vision_model_filename,
+            )
+            self._model_path = model_path
+            self._model = tf.keras.models.load_model(model_path)
+            logger.info(
+                "Loaded external vision model repo_id=%s filename=%s",
+                settings.vision_model_repo_id,
+                settings.vision_model_filename,
+            )
+            return self._model
+
+    def _preprocess_for_external_model(self, image: Image.Image) -> np.ndarray:
+        resized = image.resize((224, 224))
+        array = np.array(resized, dtype=np.float32)
+        array = array[..., ::-1]
+        array[..., 0] -= 103.939
+        array[..., 1] -= 116.779
+        array[..., 2] -= 123.68
+        return np.expand_dims(array, axis=0)
+
+    def _classify_with_external_model(
+        self,
+        image: Image.Image,
+    ) -> tuple[str, list[VisionPrediction], float]:
+        model = self._load_external_model()
+        batch = self._preprocess_for_external_model(image)
+        prediction = float(model.predict(batch, verbose=0)[0][0])
+        malignant_probability = max(0.0, min(prediction, 1.0))
+        benign_probability = 1.0 - malignant_probability
+
+        threshold = settings.vision_model_threshold
+        predicted_label = "malignant_pattern" if malignant_probability >= threshold else "benign_pattern"
+        predicted_confidence = malignant_probability if predicted_label == "malignant_pattern" else benign_probability
 
         top_predictions = [
             VisionPrediction(
-                label=label,
-                confidence=confidence,
-                rationale=rationales[label],
-            )
-            for label, confidence in ordered
+                label="malignant_pattern",
+                confidence=round(malignant_probability, 4),
+                rationale="Integrated HAM10000-based binary classifier score for a malignant pattern.",
+            ),
+            VisionPrediction(
+                label="benign_pattern",
+                confidence=round(benign_probability, 4),
+                rationale="Integrated HAM10000-based binary classifier score for a benign pattern.",
+            ),
         ]
-        predicted_label, predicted_confidence = ordered[0]
-        return predicted_label, top_predictions, predicted_confidence
+        top_predictions.sort(key=lambda item: item.confidence, reverse=True)
+        return predicted_label, top_predictions, round(predicted_confidence, 4)
 
     def quality(self, metrics: HeuristicMetrics) -> VisionQuality:
         issues: list[str] = []
@@ -175,17 +205,12 @@ class VisionService:
 
     def summarize(self, label: str, quality: VisionQuality) -> tuple[str, str]:
         label_summaries = {
-            "suspicious_irregular_pattern": "The image shows a darker, more irregular pattern that warrants cautious interpretation and in-person review.",
-            "uniform_benign_like_pattern": "The image appears more uniform visually, but this should not be treated as a diagnosis.",
-            "indeterminate_pigmented_pattern": "The image contains pigment structure, but the pattern is not strong enough for a confident visual interpretation.",
-            "low_quality_capture": "Image quality is the main limiting factor, so the result should be treated as unreliable.",
+            "malignant_pattern": "The integrated classifier scored this image closer to a malignant-pattern class than a benign one.",
+            "benign_pattern": "The integrated classifier scored this image closer to a benign-pattern class than a malignant one.",
         }
-        caution = (
-            "This Phase 4 vision result is a demo heuristic analysis, not a trained diagnostic classifier. "
-            "Use it as an interface and explainability preview only."
-        )
+        caution = "This image result is best used as visual context for the chat."
         if not quality.usable:
-            caution += " The capture quality issues are significant enough that a clinician review is preferred."
+            caution += " Image quality issues can reduce reliability."
         return label_summaries[label], caution
 
     def analyze(self, payload: bytes, content_type: str | None) -> ImageAnalysis:
@@ -194,14 +219,12 @@ class VisionService:
         self.save_upload(image)
 
         metrics = self.analyze_metrics(image)
-        label, top_predictions, confidence = self.classify(metrics)
+        label, top_predictions, confidence = self._classify_with_external_model(image)
         quality = self.quality(metrics)
         summary, caution = self.summarize(label, quality)
         overlay = self.overlay(image)
 
         return ImageAnalysis(
-            analysisType="demo_heuristic",
-            modelName=MODEL_NAME,
             predictedClass=label,
             confidence=round(confidence, 4),
             confidenceBand=self.confidence_band(confidence),

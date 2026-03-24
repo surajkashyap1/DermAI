@@ -1,0 +1,86 @@
+{
+  "title": "Adjuvant Cemiplimab or Placebo in High-Risk Cutaneous Squamous-Cell Carcinoma.",
+  "source": "The New England journal of medicine",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2025,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/40454639/",
+  "pmid": "40454639",
+  "authors": [
+    "Danny Rischin",
+    "Sandro Porceddu",
+    "Fiona Day",
+    "Daniel P Brungs",
+    "Hayden Christie",
+    "James E Jackson",
+    "Brian N Stein",
+    "Yungpo Bernard Su",
+    "Rahul Ladwa",
+    "Gerard Adams",
+    "Samantha E Bowyer",
+    "Zulfiquer Otty",
+    "Naoya Yamazaki",
+    "Paolo Bossi",
+    "Amarnath Challapalli",
+    "Axel Hauschild",
+    "Annette M Lim",
+    "Vishal A Patel",
+    "Joanna L Walker",
+    "Maite De Liz Vassen Schurmann",
+    "Paola Queirolo",
+    "Javier Ca\u00f1ueto",
+    "Flavio Augusto Ferreira da Silva",
+    "Alexander Stratigos",
+    "Alexander Guminski",
+    "Charles Lin",
+    "Fernanda Damian",
+    "Lukas Flatz",
+    "Anne E Taylor",
+    "David R Carr",
+    "Samuel Harris",
+    "Dmitry Kirtbaya",
+    "Ga\u00eblle Quereux",
+    "Piotr Rutkowski",
+    "Nicole Basset-Seguin",
+    "Nikhil I Khushalani",
+    "Caroline Robert",
+    "Haisong Ju",
+    "Camryn Joseph",
+    "Shikha Bansal",
+    "Chieh-I Chen",
+    "Frank Seebach",
+    "Suk-Young Yoo",
+    "Israel Lowy",
+    "Priscila Goncalves",
+    "Matthew G Fury",
+    "C-POST Trial Investigators"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "scc",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "BACKGROUND",
+      "text": "Patients who have cutaneous squamous-cell carcinoma with high-risk features are at risk for recurrence after definitive local therapy. The benefit of systemic adjuvant therapy options has not been well established in clinical trials."
+    },
+    {
+      "title": "METHODS",
+      "text": "In a phase 3, randomized trial, we enrolled patients with local or regional cutaneous squamous-cell carcinoma, after surgical resection and postoperative radiotherapy, at high risk for recurrence owing to nodal features (extracapsular extension with largest node \u226520 mm in diameter or at least three involved nodes) or nonnodal features (in-transit metastases, T4 lesion [with bone invasion], perineural invasion, or locally recurrent tumor with \u22651 additional risk feature). Patients were assigned in a 1:1 ratio to receive adjuvant cemiplimab (350 mg) or placebo, administered intravenously every 3 weeks for 12 weeks, followed by a dose increase to 700 mg administered every 6 weeks for up to 36 weeks (\u226448 weeks total). The primary end point was disease-free survival. Secondary end points included freedom from locoregional recurrence, freedom from distant recurrence, and safety."
+    },
+    {
+      "title": "RESULTS",
+      "text": "A total of 415 patients were assigned to cemiplimab (209) or placebo (206). The median follow-up was 24 months. Cemiplimab was superior to placebo with respect to disease-free survival (24 vs. 65 events; hazard ratio for disease recurrence or death, 0.32; 95% confidence interval [CI], 0.20 to 0.51; P<0.001). The estimated 24-month disease-free survival was 87.1% (95% CI, 80.3 to 91.6) with cemiplimab and 64.1% (95% CI, 55.9 to 71.1) with placebo. Cemiplimab led to lower risks of locoregional recurrence (9 events, vs. 40 with placebo; hazard ratio, 0.20; 95% CI, 0.09 to 0.40) and distant recurrence (10 vs. 26 events; hazard ratio, 0.35; 95% CI, 0.17 to 0.72). Adverse events of grade 3 or higher occurred in 23.9% of the patients who received cemiplimab and in 14.2% of those who received placebo; discontinuation due to adverse events occurred in 9.8% and 1.5%, respectively."
+    },
+    {
+      "title": "CONCLUSIONS",
+      "text": "Adjuvant cemiplimab therapy led to longer disease-free survival than placebo among patients at high risk for recurrence of cutaneous squamous-cell carcinoma. (Funded by Regeneron Pharmaceuticals and Sanofi; C-POST ClinicalTrials.gov number, NCT03969004.)."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "title": "Field Cancerization Therapies for the Management of Actinic Keratosis: An Updated Review.",
+  "source": "American journal of clinical dermatology",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2024,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/38351246/",
+  "pmid": "38351246",
+  "authors": [
+    "Ishita Aggarwal",
+    "Carolina Puyana",
+    "Neha Chandan",
+    "Nathan Jetter",
+    "Maria Tsoukas"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "actinic keratosis",
+    "field cancerization",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "actinic keratosis",
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Field cancerization theory highlights that the skin surrounding actinic keratoses (AK) is also at increased risk for possible malignant transformation; thus, field-directed treatments may both reduce the risk of AK recurrence and potentially reduce the risk of development of cutaneous squamous cell carcinoma (cSCC). Photodynamic therapy (PDT) with either aminolevulinic acid (ALA) or methylaminolevulinate (MAL), as well as topical treatments such as 5-fluorouracil (5-FU), diclofenac gel, piroxicam, imiquimod, and ingenol mebutate, have all shown higher efficacy than vehicle treatments. PDT is widely recognized for its high efficacy; however, concerns for associated pain have driven new studies to begin using alternative illumination and pretreatment techniques, including lasers. Among topical treatments, a combination of 5-FU and salicylic acid (5-FU-SA) has shown to be the most effective but also causes the most adverse reactions. Tirbanibulin, a new topical agent approved for use in 2020, boasts a favorable safety profile in comparison with imiquimod, 5-FU, and diclofenac. Meanwhile, ingenol mebutate is no longer recommended for the treatment of AKs due to concerns for increased risk of cSCC development. Moving forward, an increasing number of studies push for standardization of outcome measures to better predict risk of future cSCC and use of more effective measures of cost to better guide patients. Here, we present an updated and comprehensive narrative review both confirming the efficacy of previously mentioned therapies as well as highlighting new approaches to PDT and discussing the use of lasers and novel topical treatments for treatment of AK."
+    }
+  ]
+}

@@ -26,15 +26,14 @@ async def upload_image(request: Request, file: UploadFile = File(...)) -> Upload
         image_analysis = vision_service.analyze(payload, file.content_type)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    except Exception as error:
+        raise HTTPException(status_code=503, detail="DermAI could not run image analysis right now.") from error
 
     chat_runtime.sessions.attach_image_analysis(session.session_id, image_analysis)
 
     return UploadImageResponse(
         sessionId=session.session_id,
         status="completed",
-        message=(
-            "Image analysis completed with the current demo heuristic vision pipeline. "
-            "You can now ask a follow-up question in the same session."
-        ),
+        message="Image analysis completed. You can now ask a follow-up question in the same session.",
         imageAnalysis=image_analysis,
     )

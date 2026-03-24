@@ -1,0 +1,28 @@
+{
+  "title": "The global, regional, and national burden of cancer, 1990-2023, with forecasts to 2050: a systematic analysis for the Global Burden of Disease Study 2023.",
+  "source": "Lancet (London, England)",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2025,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/41015051/",
+  "pmid": "41015051",
+  "authors": [
+    "GBD 2023 Cancer Collaborators"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "melanoma",
+    "risk factors"
+  ],
+  "disease_tags": [
+    "melanoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "doi: 10.1016/S0140-6736(25)01635-6"
+    }
+  ]
+}

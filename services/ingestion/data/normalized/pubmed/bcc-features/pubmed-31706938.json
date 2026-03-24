@@ -1,0 +1,53 @@
+{
+  "title": "Dermoscopic features of basal cell carcinoma and its subtypes: A systematic review.",
+  "source": "Journal of the American Academy of Dermatology",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2021,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/31706938/",
+  "pmid": "31706938",
+  "authors": [
+    "Ofer Reiter",
+    "Ilit Mimouni",
+    "Stephen Dusza",
+    "Allan C Halpern",
+    "Yael Anne Leshem",
+    "Ashfaq A Marghoob"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "bcc",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "basal cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "BACKGROUND",
+      "text": "Multiple studies have reported on dermoscopic structures in basal cell carcinoma (BCC) and its subtypes, with varying results."
+    },
+    {
+      "title": "OBJECTIVE",
+      "text": "To systematically review the prevalence of dermoscopic structures in BCC and its subtypes."
+    },
+    {
+      "title": "METHODS",
+      "text": "Databases and reference lists were searched for relevant trials according to Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. Studies were assessed for the relative proportion of BCC dermoscopic features. Random-effects models were used to estimate summary effect sizes."
+    },
+    {
+      "title": "RESULTS",
+      "text": "Included were 31 studies consisting of 5950 BCCs. The most common dermoscopic features seen in BCC were arborizing vessels (59%), shiny white structures (49%), and large blue-grey ovoid nests (34%). Arborizing vessels, ulceration, and blue-grey ovoid nests and globules were most common in nodular BCC; short-fine telangiectasia, multiple small erosions, and leaf-like, spoke wheel and concentric structures in superficial BCC; porcelain white areas and arborizing vessels in morpheaform BCC; and arborizing vessels and ulceration in infiltrative BCC."
+    },
+    {
+      "title": "LIMITATIONS",
+      "text": "Studies had significant heterogeneity. Studies reporting BCC histopathologic subtypes did not provide clinical data on pigmentation of lesions."
+    },
+    {
+      "title": "CONCLUSION",
+      "text": "In addition to arborizing vessels, shiny white structures are a common feature of BCC. A constellation of dermoscopic features may aid in differentiating between BCC histopathologic subtypes."
+    }
+  ]
+}

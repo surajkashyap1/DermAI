@@ -1,22 +1,29 @@
 # DermAI
 
-DermAI is a full-stack dermatology demo product built as a portfolio-grade rebuild of the original conference project. The application combines a dermatology-focused evidence assistant with a lesion analysis workflow and is being rebuilt in phases.
+DermAI is a full-stack dermatology web app with:
 
-## Current Scope
-Phases 1 through 6 establish the current shareable demo state:
+- a chat-first skin cancer assistant
+- grounded dermatology retrieval
+- image upload for lesion analysis
+- follow-up chat that uses uploaded image context
 
-- Next.js web shell in `apps/web`
-- FastAPI backend skeleton in `apps/api`
-- shared frontend contracts in `packages/shared`
-- local dermatology corpus ingestion in `services/ingestion`
-- retrieval-backed chat with citations
-- LangGraph-driven intent routing and response shaping
-- demo heuristic image-analysis pipeline with overlay generation
-- same-session image-plus-chat follow-up flow
-- request tracing, safer error handling, and a local eval harness
-- docs, repo conventions, and starter deployment scaffolding
+## Stack
 
-## Repository Layout
+- Frontend: Next.js, TypeScript, Tailwind CSS
+- Backend: FastAPI, LangGraph
+- Retrieval: Qdrant, dense + sparse retrieval, reranking
+- Vision: external skin-lesion model integrated from Hugging Face
+- LLM: Groq-backed generation with local fallback behavior
+
+## Current Product Surface
+
+- single-page chat UI at `/`
+- dermatology chat
+- image upload and lesion classification
+- multimodal follow-up in the same session
+- dark-mode interface
+
+## Repo Layout
 
 ```text
 apps/
@@ -25,97 +32,103 @@ apps/
 packages/
   shared/     Shared TypeScript contracts
 services/
-  ingestion/  Future ingestion pipeline
-  retrieval/  Future retrieval system
-  vision/     Future classifier and Grad-CAM services
-  eval/       Future benchmarks and evaluation tooling
+  ingestion/  Corpus ingestion and normalization
+  retrieval/  Retrieval infrastructure
+  eval/       Evaluation scripts
 infra/
   compose/    Local container orchestration
   deploy/     Deployment notes and manifests
-docs/         Architecture, API, roadmap
+docs/         Architecture and API notes
 ```
 
-## Local Development
+## Requirements
 
-### Web
+- Node.js 20+
+- Python 3.11
+- Docker Desktop
+
+## Environment
+
+Create a repo-root `.env` file as needed. Common variables:
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+DERMAI_GROQ_API_KEY=your_key_here
+DERMAI_GROQ_MODEL=llama-3.1-8b-instant
+DERMAI_QDRANT_URL=http://localhost:6333
+DERMAI_VISION_MODEL_REPO_ID=devatreya/skin-lesion-resnet50
+DERMAI_VISION_MODEL_FILENAME=resnet50_best.h5
+DERMAI_VISION_MODEL_THRESHOLD=0.5
+```
+
+If `DERMAI_GROQ_API_KEY` is not set, the backend falls back to a deterministic local extractive answer mode.
+
+## Install
+
+### Frontend
 
 ```bash
 npm install
-npm run dev:web
 ```
 
-The web app runs on `http://localhost:3000`.
-
-### API
-
-DermAI should be run on **Python 3.11**. Create a Python 3.11 virtual environment, then install backend dependencies:
+### Backend
 
 ```bash
 py -3.11 -m venv .venv
 .venv\Scripts\activate
 pip install -r apps/api/requirements.txt
-python -m uvicorn app.main:app --reload --app-dir apps/api
 ```
 
-The API runs on `http://localhost:8000`.
+## Run Locally
 
-For backend local verification and tests:
+Start Qdrant:
 
 ```bash
-pip install -r apps/api/requirements-dev.txt
+npm run infra:qdrant:up
 ```
 
-If `py -3.11` is not available on your machine yet, install Python 3.11 first and recreate `.venv`. Python 3.14 works today, but it produces avoidable compatibility warnings with parts of the LangGraph stack.
-
-## Groq Configuration
-
-DermAI can use Groq as its hosted LLM provider. Add these variables to the repo-root `.env` or your shell when you are ready:
+Start the API:
 
 ```bash
-DERMAI_GROQ_API_KEY=your_key_here
-DERMAI_GROQ_MODEL=llama-3.1-8b-instant
+./.venv/Scripts/python.exe -m uvicorn app.main:app --reload --app-dir apps/api
 ```
 
-If no Groq key is configured, the backend falls back to a deterministic local extractive answer mode built from retrieved evidence.
-
-## Current Endpoints
-
-- `GET /health`
-- `GET /version`
-- `POST /chat`
-- `POST /upload-image`
-- `GET /citations/{citation_id}`
-- `GET /session/{session_id}`
-
-`POST /chat` runs against the local seed corpus and returns grounded citations. `POST /upload-image` returns a demo heuristic image-analysis payload with an overlay preview, and same-session follow-up questions can use that image result as non-diagnostic context. The current vision path is explicitly not a trained diagnostic model.
-
-## Phase 6 Hardening
-
-- API responses include an `x-request-id` header for debugging failed requests.
-- Citation lookups now return real `404` errors instead of placeholder data.
-- The demo UI surfaces upload and chat failures instead of silently degrading.
-- A lightweight eval runner lives in `services/eval/run_phase6_eval.py`.
-
-Run the eval harness from the repo root:
+Start the web app:
 
 ```bash
+npm run dev:web
+```
+
+Open:
+
+- Web: `http://localhost:3000`
+- API docs: `http://localhost:8000/docs`
+
+## Notes
+
+- The first image upload can be slower because the vision model is downloaded and cached locally.
+- Qdrant should be running locally for the intended retrieval path.
+- The app is chat-first, but image upload stays attached to the active session for follow-up questions.
+
+## Useful Commands
+
+```bash
+npm run build:web
+npm run typecheck:web
 python services/eval/run_phase6_eval.py
+python services/eval/run_retrieval_eval.py
 ```
 
 ## Deployment
 
-DermAI is currently set up for:
+Current deployment split:
 
-- Vercel for the Next.js web app
-- Render for the FastAPI API
+- Web: Vercel
+- API: Render
 
-Deployment files included in the repo:
+If redeploying:
 
-- `render.yaml` for the API service
-- `apps/api/Dockerfile` for Render's Docker deploy
-- `infra/deploy/README.md` for environment and platform notes
-
-Recommended production split:
-
-- web: `your-domain.com`
-- api: `api.your-domain.com`
+1. push to `main`
+2. let Vercel rebuild the web app
+3. let Render rebuild the API Docker image
+4. test chat, image upload, and image follow-up in production

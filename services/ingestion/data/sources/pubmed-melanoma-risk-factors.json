@@ -1,0 +1,24 @@
+{
+  "title": "Melanoma Risk Factors and Early Recognition Context",
+  "source": "DermAI Normalized PubMed Fixture",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2024,
+  "href": "https://dermai.local/sources/pubmed-melanoma-risk-factors",
+  "pmid": null,
+  "authors": ["DermAI Fixture"],
+  "doc_type": "json",
+  "topic_tags": ["melanoma", "risk factors", "epidemiology"],
+  "disease_tags": ["melanoma", "skin cancer"],
+  "sections": [
+    {
+      "title": "Risk factors",
+      "text": "Cutaneous melanoma risk is influenced by phenotype, ultraviolet exposure, family history, personal history of melanoma, and the presence of numerous or atypical melanocytic nevi. In a RAG assistant, these factors should be surfaced as clinical context rather than as a way to convert a single image into a diagnosis."
+    },
+    {
+      "title": "Early recognition context",
+      "text": "Early recognition discussions commonly emphasize evolution of a lesion over time, discordance from surrounding nevi, and prompt specialist review when concern is present. A cautious system should connect these risk factors to evaluation urgency without overstating certainty from limited evidence."
+    }
+  ]
+}

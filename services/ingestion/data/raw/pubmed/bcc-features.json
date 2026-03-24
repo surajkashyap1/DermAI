@@ -1,0 +1,165 @@
+{
+  "dataset_id": "bcc-features",
+  "query": "basal cell carcinoma clinical features diagnosis",
+  "count": 1411,
+  "ids": [
+    "31706938",
+    "31288208"
+  ],
+  "articles": [
+    {
+      "uid": "31706938",
+      "title": "Dermoscopic features of basal cell carcinoma and its subtypes: A systematic review.",
+      "fulljournalname": "Journal of the American Academy of Dermatology",
+      "pubdate": "2021",
+      "authors": [
+        {
+          "name": "Ofer Reiter"
+        },
+        {
+          "name": "Ilit Mimouni"
+        },
+        {
+          "name": "Stephen Dusza"
+        },
+        {
+          "name": "Allan C Halpern"
+        },
+        {
+          "name": "Yael Anne Leshem"
+        },
+        {
+          "name": "Ashfaq A Marghoob"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "BACKGROUND",
+          "text": "Multiple studies have reported on dermoscopic structures in basal cell carcinoma (BCC) and its subtypes, with varying results."
+        },
+        {
+          "label": "OBJECTIVE",
+          "text": "To systematically review the prevalence of dermoscopic structures in BCC and its subtypes."
+        },
+        {
+          "label": "METHODS",
+          "text": "Databases and reference lists were searched for relevant trials according to Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. Studies were assessed for the relative proportion of BCC dermoscopic features. Random-effects models were used to estimate summary effect sizes."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Included were 31 studies consisting of 5950 BCCs. The most common dermoscopic features seen in BCC were arborizing vessels (59%), shiny white structures (49%), and large blue-grey ovoid nests (34%). Arborizing vessels, ulceration, and blue-grey ovoid nests and globules were most common in nodular BCC; short-fine telangiectasia, multiple small erosions, and leaf-like, spoke wheel and concentric structures in superficial BCC; porcelain white areas and arborizing vessels in morpheaform BCC; and arborizing vessels and ulceration in infiltrative BCC."
+        },
+        {
+          "label": "LIMITATIONS",
+          "text": "Studies had significant heterogeneity. Studies reporting BCC histopathologic subtypes did not provide clinical data on pigmentation of lesions."
+        },
+        {
+          "label": "CONCLUSION",
+          "text": "In addition to arborizing vessels, shiny white structures are a common feature of BCC. A constellation of dermoscopic features may aid in differentiating between BCC histopathologic subtypes."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "31706938"
+        }
+      ]
+    },
+    {
+      "uid": "31288208",
+      "title": "Diagnosis and treatment of basal cell carcinoma: European consensus-based interdisciplinary guidelines.",
+      "fulljournalname": "European journal of cancer (Oxford, England : 1990)",
+      "pubdate": "2019",
+      "authors": [
+        {
+          "name": "Ketty Peris"
+        },
+        {
+          "name": "Maria Concetta Fargnoli"
+        },
+        {
+          "name": "Claus Garbe"
+        },
+        {
+          "name": "Roland Kaufmann"
+        },
+        {
+          "name": "Lars Bastholt"
+        },
+        {
+          "name": "Nicole Basset Seguin"
+        },
+        {
+          "name": "Veronique Bataille"
+        },
+        {
+          "name": "Veronique Del Marmol"
+        },
+        {
+          "name": "Reinhard Dummer"
+        },
+        {
+          "name": "Catherine A Harwood"
+        },
+        {
+          "name": "Axel Hauschild"
+        },
+        {
+          "name": "Christoph H\u00f6ller"
+        },
+        {
+          "name": "Merete Haedersdal"
+        },
+        {
+          "name": "Josep Malvehy"
+        },
+        {
+          "name": "Mark R Middleton"
+        },
+        {
+          "name": "Colin A Morton"
+        },
+        {
+          "name": "Eduardo Nagore"
+        },
+        {
+          "name": "Alexander J Stratigos"
+        },
+        {
+          "name": "Rolf-Markus Szeimies"
+        },
+        {
+          "name": "Luca Tagliaferri"
+        },
+        {
+          "name": "Myrto Trakatelli"
+        },
+        {
+          "name": "Iris Zalaudek"
+        },
+        {
+          "name": "Alexander Eggermont"
+        },
+        {
+          "name": "Jean Jacques Grob"
+        },
+        {
+          "name": "European Dermatology Forum (EDF), the European Association of Dermato-Oncology (EADO) and the European Organization for Research and Treatment of Cancer (EORTC)"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Basal cell carcinoma (BCC) is the most common malignant tumour in white populations. Multidisciplinary experts from the European Dermatology Forum, the European Association of Dermato-Oncology and the European Organization of Research and Treatment of Cancer collaborated to develop recommendations on diagnosis and treatment of BCC. A new classification into 'easy-to-treat (common) BCC and 'difficult-to-treat' BCC is proposed. Diagnosis is based on clinicodermatoscopic features for 'easy-to-treat' BCCs. Histopathological confirmation is mandatory in ambiguous lesions and in BCCs located in high-risk areas. The first-line treatment of 'easy-to-treat' BCC is complete surgery. Microscopically controlled surgery shall be offered for high-risk BCC, recurrent BCC and BCC in critical anatomical sites. Topical therapies (5% imiquimod, 5% fluorouracil) and destructive approaches (curettage, electrocautery, cryotherapy, laser ablation) should be considered in patients with low-risk superficial BCC. Photodynamic therapy is an effective treatment for superficial BCC and thin nodular BCC. The therapy for a 'difficult-to-treat' BCC should preferentially be discussed by a multidisciplinary tumour board. Hedgehog inhibitors, vismodegib or sonidegib, should be offered to patients with locally advanced and metastatic BCCs. Immunotherapy with anti-programmed cell death 1 (PD-1) antibodies is a promising therapeutic option, currently being investigated in clinical trials. Radiotherapy represents a valid alternative to surgery for BCC on the face, especially in elderly patients. In patients with naevoid basal cell carcinoma syndrome (NBCCS), close surveillance and regular skin examinations are required to diagnose and treat BCCs at early stage. Long-term follow-up is recommended in patients with high-risk BCC subtypes, high-risk sites, multiple BCCs and NBCCS."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "31288208"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=basal+cell+carcinoma+clinical+features+diagnosis"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "melanoma_warning_signs",
+    "query": "What are warning signs of melanoma?",
+    "expected_disease_tags": ["melanoma"],
+    "expected_title_fragments": ["melanoma warning signs"]
+  },
+  {
+    "name": "bcc_vs_melanoma",
+    "query": "How is basal cell carcinoma different from melanoma?",
+    "expected_disease_tags": ["bcc", "melanoma"],
+    "expected_title_fragments": ["keratinocyte skin cancers", "pigmented lesion differential"]
+  },
+  {
+    "name": "surveillance_threshold",
+    "query": "When is self-monitoring not enough for a lesion?",
+    "expected_topic_tags": ["surveillance", "follow-up"],
+    "expected_title_fragments": ["surveillance and prevention", "biopsy and follow-up"]
+  },
+  {
+    "name": "scc_features",
+    "query": "What visual patterns are concerning for squamous cell carcinoma?",
+    "expected_disease_tags": ["scc"],
+    "expected_title_fragments": ["keratinocyte skin cancers"]
+  },
+  {
+    "name": "pigmented_differential",
+    "query": "How do benign pigmented lesions differ from more suspicious patterns?",
+    "expected_topic_tags": ["differential diagnosis", "pigmented lesions"],
+    "expected_title_fragments": ["pigmented lesion differential", "benign lesion patterns"]
+  },
+  {
+    "name": "broad_skin_cancer_overview",
+    "query": "Tell me more about melanoma and different types of skin cancer",
+    "expected_disease_tags": ["melanoma", "basal cell carcinoma", "squamous cell carcinoma"],
+    "expected_title_fragments": ["melanoma overview", "keratinocyte skin cancers"]
+  },
+  {
+    "name": "melanoma_risk_factors",
+    "query": "What increases melanoma risk?",
+    "expected_disease_tags": ["melanoma"],
+    "expected_title_fragments": ["melanoma risk factors", "melanoma overview"]
+  },
+  {
+    "name": "ugly_duckling_signal",
+    "query": "What does the ugly duckling sign mean for melanoma triage?",
+    "expected_disease_tags": ["melanoma"],
+    "expected_title_fragments": ["melanoma warning signs", "melanoma risk factors"]
+  },
+  {
+    "name": "biopsy_threshold",
+    "query": "When should a changing pigmented lesion be considered for biopsy?",
+    "expected_topic_tags": ["biopsy", "follow-up"],
+    "expected_title_fragments": ["biopsy and follow-up", "pigmented lesion differential"]
+  },
+  {
+    "name": "low_confidence_handling",
+    "query": "How should low-confidence dermatology outputs be handled?",
+    "expected_topic_tags": ["triage", "follow-up"],
+    "expected_title_fragments": ["dermatology triage", "biopsy and follow-up"]
+  },
+  {
+    "name": "non_healing_lesion",
+    "query": "Why is a non-healing bleeding lesion concerning?",
+    "expected_disease_tags": ["basal cell carcinoma", "squamous cell carcinoma"],
+    "expected_title_fragments": ["keratinocyte skin cancers", "dermatology triage"]
+  },
+  {
+    "name": "urgent_triage_escalation",
+    "query": "What lesion features justify urgent in-person dermatology review?",
+    "expected_topic_tags": ["triage"],
+    "expected_title_fragments": ["dermatology triage", "melanoma warning signs"]
+  }
+]

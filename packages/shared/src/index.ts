@@ -13,14 +13,6 @@ export interface VersionResponse {
   apiBasePath: string;
 }
 
-export interface Citation {
-  id: string;
-  title: string;
-  source: string;
-  snippet: string;
-  href?: string;
-}
-
 export interface ChatRequest {
   sessionId?: string;
   message: string;
@@ -30,10 +22,6 @@ export interface ChatRequest {
 export interface ChatResponse {
   sessionId: string;
   answer: string;
-  citations: Citation[];
-  confidence: "low" | "medium" | "high";
-  disclaimer: string;
-  followUps: string[];
 }
 
 export interface VisionPrediction {
@@ -52,8 +40,6 @@ export interface VisionQuality {
 }
 
 export interface ImageAnalysis {
-  analysisType: "demo_heuristic";
-  modelName: string;
   predictedClass: string;
   confidence: number;
   confidenceBand: "low" | "medium" | "high";
@@ -77,11 +63,4 @@ export interface SessionMessage {
   id: string;
   role: "user" | "assistant";
   content: string;
-}
-
-export interface SessionResponse {
-  sessionId: string;
-  messages: SessionMessage[];
-  imageAnalysisAvailable: boolean;
-  imageAnalysis?: ImageAnalysis | null;
 }

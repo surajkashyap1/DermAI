@@ -55,8 +55,6 @@ class VisionQuality(BaseModel):
 
 
 class ImageAnalysis(BaseModel):
-    analysisType: Literal["demo_heuristic"]
-    modelName: str
     predictedClass: str
     confidence: float
     confidenceBand: Literal["low", "medium", "high"]
@@ -80,10 +78,3 @@ class SessionMessage(BaseModel):
     id: str
     role: Literal["user", "assistant"]
     content: str
-
-
-class SessionResponse(BaseModel):
-    sessionId: str
-    messages: list[SessionMessage]
-    imageAnalysisAvailable: bool
-    imageAnalysis: ImageAnalysis | None = None

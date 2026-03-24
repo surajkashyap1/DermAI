@@ -1,0 +1,278 @@
+{
+  "dataset_id": "bcc-clinical-overview",
+  "query": "basal cell carcinoma clinical features management review",
+  "count": 113,
+  "ids": [
+    "26029015",
+    "37604067",
+    "30321581",
+    "20301464",
+    "38573059"
+  ],
+  "articles": [
+    {
+      "uid": "26029015",
+      "title": "Basal cell carcinoma: pathogenesis, epidemiology, clinical features, diagnosis, histopathology, and management.",
+      "fulljournalname": "The Yale journal of biology and medicine",
+      "pubdate": "2015",
+      "authors": [
+        {
+          "name": "Alexander G Marzuka"
+        },
+        {
+          "name": "Samuel E Book"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Basal cell carcinoma (BCC) is the most common malignancy. Exposure to sunlight is the most important risk factor. Most, if not all, cases of BCC demonstrate overactive Hedgehog signaling. A variety of treatment modalities exist and are selected based on recurrence risk, importance of tissue preservation, patient preference, and extent of disease. The pathogenesis, epidemiology, clinical features, diagnosis, histopathology, and management of BCC will be discussed in this review."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "26029015"
+        }
+      ]
+    },
+    {
+      "uid": "37604067",
+      "title": "European consensus-based interdisciplinary guideline for diagnosis and treatment of basal cell carcinoma-update 2023.",
+      "fulljournalname": "European journal of cancer (Oxford, England : 1990)",
+      "pubdate": "2023",
+      "authors": [
+        {
+          "name": "Ketty Peris"
+        },
+        {
+          "name": "Maria Concetta Fargnoli"
+        },
+        {
+          "name": "Roland Kaufmann"
+        },
+        {
+          "name": "Petr Arenberger"
+        },
+        {
+          "name": "Lars Bastholt"
+        },
+        {
+          "name": "Nicole Basset Seguin"
+        },
+        {
+          "name": "Veronique Bataille"
+        },
+        {
+          "name": "Lieve Brochez"
+        },
+        {
+          "name": "Veronique Del Marmol"
+        },
+        {
+          "name": "Reinhard Dummer"
+        },
+        {
+          "name": "Ana-Marie Forsea"
+        },
+        {
+          "name": "Caroline Gaudy-Marqueste"
+        },
+        {
+          "name": "Catherine A Harwood"
+        },
+        {
+          "name": "Axel Hauschild"
+        },
+        {
+          "name": "Christoph H\u00f6ller"
+        },
+        {
+          "name": "Lidija Kandolf"
+        },
+        {
+          "name": "Nicole W J Kellerners-Smeets"
+        },
+        {
+          "name": "Aimilios Lallas"
+        },
+        {
+          "name": "Ulrike Leiter"
+        },
+        {
+          "name": "Josep Malvehy"
+        },
+        {
+          "name": "Branka Marinovi\u0107"
+        },
+        {
+          "name": "Zeljko Mijuskovic"
+        },
+        {
+          "name": "David Moreno-Ramirez"
+        },
+        {
+          "name": "Eduardo Nagore"
+        },
+        {
+          "name": "Paul Nathan"
+        },
+        {
+          "name": "Alexander J Stratigos"
+        },
+        {
+          "name": "Eggert Stockfleth"
+        },
+        {
+          "name": "Luca Tagliaferri"
+        },
+        {
+          "name": "Myrto Trakatelli"
+        },
+        {
+          "name": "Ricardo Vieira"
+        },
+        {
+          "name": "Iris Zalaudek"
+        },
+        {
+          "name": "Claus Garbe"
+        },
+        {
+          "name": "EADO\u201dA, EDF\u201dB, ESTRO\u201dC, UEMS\u201dD and EADV\u201dE"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Basal cell carcinoma (BCC) is the most common malignant tumour in white populations. Multidisciplinary experts from European Association of Dermato-Oncology (EADO), European Dermatology Forum, European Society for Radiotherapy and Oncology (ESTRO), Union Europ\u00e9enne des M\u00e9decins Sp\u00e9cialistes, and the European Academy of Dermatology and Venereology developed updated recommendations on diagnosis and treatment of BCC. BCCs were categorised into 'easy-to-treat'\u00a0(common) and 'difficult-to-treat'\u00a0according to the new EADO clinical classification. Diagnosis is based on clinico-dermatoscopic features, although histopathological confirmation is mandatory in equivocal lesions. The first-line treatment of BCC is complete surgery. Micrographically controlled surgery shall be offered in high-risk and recurrent BCC, and BCC located on critical anatomical sites. Topical therapies and destructive approaches can be considered in patients with low-risk superficial BCC. Photodynamic therapy is an effective treatment for superficial and low-risk nodular BCCs. Management of 'difficult-to-treat'\u00a0BCCs should be discussed by a multidisciplinary tumour board. Hedgehog inhibitors (HHIs), vismodegib or sonidegib, should be offered to patients with locally advanced and metastatic BCC. Immunotherapy with anti-PD1 antibodies (cemiplimab) is a second-line treatment in patients with a\u00a0progression of disease, contraindication, or intolerance to HHI therapy. Radiotherapy represents a valid alternative in patients who are not candidates for or decline surgery, especially elderly patients. Electrochemotherapy may be offered when surgery or radiotherapy is contraindicated. In Gorlin patients, regular skin examinations are required to diagnose and treat BCCs at an\u00a0early stage. Long-term follow-up is recommended in patients with high-risk BCC, multiple BCCs, and Gorlin syndrome."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "37604067"
+        }
+      ]
+    },
+    {
+      "uid": "30321581",
+      "title": "Dermoscopy and dermatopathology correlates of cutaneous neoplasms.",
+      "fulljournalname": "Journal of the American Academy of Dermatology",
+      "pubdate": "2019",
+      "authors": [
+        {
+          "name": "Oriol Y\u00e9lamos"
+        },
+        {
+          "name": "Ralph P Braun"
+        },
+        {
+          "name": "Konstantinos Liopyris"
+        },
+        {
+          "name": "Zachary J Wolner"
+        },
+        {
+          "name": "Katrin Kerl"
+        },
+        {
+          "name": "Pedram Gerami"
+        },
+        {
+          "name": "Ashfaq A Marghoob"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Dermoscopy is increasingly used by clinicians (dermatologists, family physicians, podiatrists, doctors of osteopathic medicine, etc) to inform clinical management decisions. Dermoscopic findings or images provided to pathologists offer important insight into the clinician's diagnostic and management thought process. However, with limited dermoscopic training in dermatopathology, dermoscopic descriptions and images provided in the requisition form provide little value to pathologists. Most dermoscopic structures have direct histopathologic correlates, and therefore dermoscopy can act as an excellent communication bridge between the clinician and the pathologist. In the first article in this continuing medical education series, we review dermoscopic features and their histopathologic correlates."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "30321581"
+        }
+      ]
+    },
+    {
+      "uid": "38573059",
+      "title": "Update on Cancer Predisposition Syndromes and Surveillance Guidelines for Childhood Brain Tumors.",
+      "fulljournalname": "Clinical cancer research : an official journal of the American Association for Cancer Research",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Jordan R Hansford"
+        },
+        {
+          "name": "Anirban Das"
+        },
+        {
+          "name": "Rose B McGee"
+        },
+        {
+          "name": "Yoshiko Nakano"
+        },
+        {
+          "name": "Jack Brzezinski"
+        },
+        {
+          "name": "Sarah R Scollon"
+        },
+        {
+          "name": "Surya P Rednam"
+        },
+        {
+          "name": "Jaclyn Schienda"
+        },
+        {
+          "name": "Orli Michaeli"
+        },
+        {
+          "name": "Sun Young Kim"
+        },
+        {
+          "name": "Mary-Louise C Greer"
+        },
+        {
+          "name": "Rosanna Weksberg"
+        },
+        {
+          "name": "Douglas R Stewart"
+        },
+        {
+          "name": "William D Foulkes"
+        },
+        {
+          "name": "Uri Tabori"
+        },
+        {
+          "name": "Kristian W Pajtler"
+        },
+        {
+          "name": "Stefan M Pfister"
+        },
+        {
+          "name": "Garrett M Brodeur"
+        },
+        {
+          "name": "Junne Kamihara"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Tumors of the central nervous system (CNS) comprise the second most common group of neoplasms in childhood. The incidence of germline predisposition among children with brain tumors continues to grow as our knowledge on disease etiology increases. Some children with brain tumors may present with nonmalignant phenotypic features of specific syndromes (e.g., nevoid basal cell carcinoma syndrome, neurofibromatosis type 1 and type 2, DICER1 syndrome, and constitutional mismatch-repair deficiency), while others may present with a strong family history of cancer (e.g., Li-Fraumeni syndrome) or with a rare tumor commonly found in the context of germline predisposition (e.g., rhabdoid tumor predisposition syndrome). Approximately 50% of patients with a brain tumor may be the first in a family identified to have a predisposition. The past decade has witnessed a rapid expansion in our molecular understanding of CNS tumors. A significant proportion of CNS tumors are now well characterized and known to harbor specific genetic changes that can be found in the germline. Additional novel predisposition syndromes are also being described. Identification of these germline syndromes in individual patients has not only enabled cascade testing of family members and early tumor surveillance but also increasingly affected cancer management in those patients. Therefore, the AACR Cancer Predisposition Working Group chose to highlight these advances in CNS tumor predisposition and summarize and/or generate surveillance recommendations for established and more recently emerging pediatric brain tumor predisposition syndromes."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "38573059"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=basal+cell+carcinoma+clinical+features+management+review"
+}

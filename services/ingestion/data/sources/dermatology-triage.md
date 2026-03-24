@@ -1,8 +1,12 @@
 # Dermatology Triage And Safety
 Source: DermAI Safety Guide
+SourceType: safety_policy
+Authority: internal_seed
+Audience: clinician
 Year: 2026
 Href: https://dermai.local/sources/dermatology-triage
 Tags: safety, triage, escalation
+DiseaseTags: melanoma, skin cancer, dermatology emergency
 
 ## Emergency escalation
 A dermatology assistant should not attempt routine self-care guidance when a user describes severe infection, rapidly spreading rash with systemic symptoms, angioedema, breathing difficulty, mucosal blistering, or signs of sepsis. These cases should be redirected toward urgent medical evaluation.

@@ -1,0 +1,211 @@
+{
+  "dataset_id": "actinic-keratosis-overview",
+  "query": "actinic keratosis squamous cell carcinoma review management",
+  "count": 134,
+  "ids": [
+    "33572373",
+    "38783539",
+    "39162820",
+    "24075552",
+    "38351246"
+  ],
+  "articles": [
+    {
+      "uid": "33572373",
+      "title": "Cutaneous Squamous Cell Carcinoma: From Pathophysiology to Novel Therapeutic Approaches.",
+      "fulljournalname": "Biomedicines",
+      "pubdate": "2021",
+      "authors": [
+        {
+          "name": "Luca Fania"
+        },
+        {
+          "name": "Dario Didona"
+        },
+        {
+          "name": "Francesca Romana Di Pietro"
+        },
+        {
+          "name": "Sofia Verkhovskaia"
+        },
+        {
+          "name": "Roberto Morese"
+        },
+        {
+          "name": "Giovanni Paolino"
+        },
+        {
+          "name": "Michele Donati"
+        },
+        {
+          "name": "Francesca Ricci"
+        },
+        {
+          "name": "Valeria Coco"
+        },
+        {
+          "name": "Francesco Ricci"
+        },
+        {
+          "name": "Eleonora Candi"
+        },
+        {
+          "name": "Damiano Abeni"
+        },
+        {
+          "name": "Elena Dellambra"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Cutaneous squamous cell carcinoma (cSCC), a non-melanoma skin cancer, is a keratinocyte carcinoma representing one of the most common cancers with an increasing incidence. cSCC could be in situ (e.g., Bowen's disease) or an invasive form. A significant cSCC risk factor is advanced age, together with cumulative sun exposure, fair skin, prolonged immunosuppression, and previous skin cancer diagnoses. Although most cSCCs can be treated by surgery, a fraction of them recur and metastasize, leading to death. cSCC could arise de novo or be the result of a progression of the actinic keratosis, an in situ carcinoma. The multistage process of cSCC development and progression is characterized by mutations in the genes involved in epidermal homeostasis and by several alterations, such as epigenetic modifications, viral infections, or microenvironmental changes. Thus, cSCC development is a gradual process with several histological- and pathological-defined stages. Dermoscopy and reflectance confocal microscopy enhanced the diagnostic accuracy of cSCC. Surgical excision is the first-line treatment for invasive cSCC. Moreover, radiotherapy may be considered as a primary treatment in patients not candidates for surgery. Extensive studies of cSCC pathogenic mechanisms identified several pharmaceutical targets and allowed the development of new systemic therapies, including immunotherapy with immune checkpoint inhibitors, such as Cemiplimab, and epidermal growth factor receptor inhibitors for metastatic and locally advanced cSCC. Furthermore, the implementation of prevention measures has been useful in patient management."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "33572373"
+        }
+      ]
+    },
+    {
+      "uid": "38783539",
+      "title": "Topical Calcipotriol Plus 5-Fluorouracil in the Treatment of Actinic Keratosis, Bowen's Disease, and Squamous Cell Carcinoma: A Systematic Review.",
+      "fulljournalname": "Journal of cutaneous medicine and surgery",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Adam H Lapidus"
+        },
+        {
+          "name": "Sangho Lee"
+        },
+        {
+          "name": "Zhao Feng Liu"
+        },
+        {
+          "name": "Sarah Smithson"
+        },
+        {
+          "name": "Christopher Y Chew"
+        },
+        {
+          "name": "Douglas Gin"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "BACKGROUND/OBJECTIVES",
+          "text": "Actinic keratoses (AK) are premalignant skin lesions caused by chronic sun exposure, topically managed by 5-fluorouracil (5-FU), diclofenac 3% gel, and imiquimod. Despite their effectiveness, long treatment duration and severe adverse local skin reactions have limited patient concordance. Calcipotriol has recently been used as a combination agent for existing topical AK treatments. A systematic review was performed to determine the clinical efficacy of 5-FU and calcipotriol for the treatment of AK, Bowen's disease, and squamous cell carcinoma (SCC)."
+        },
+        {
+          "label": "METHODS",
+          "text": "A systematic literature search was conducted on Medline, Embase, and Cochrane Library. Among the 84 records screened, 12 were retrieved for full-text review and 8 were included in the final analysis."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Among the 8 studies, there were 214 control patients and 288 patients who received the intervention. The combination 5% 5-FU with calcipotriol resulted in a significant reduction in the number of AKs on the face, scalp, right upper extremity, and left upper extremity for all sites at 8 weeks ( P < .0001). No significant difference in SCC incidence was observed at 1 or 2 years, but there was a significant reduction observed at 3 years for SCC on face and scalp. No study assessed the combination for Bowen's disease."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Combination 5% 5-FU with calcipotriol is an effective treatment for Aks; however, future trials may consider longer treatment and follow-up periods for the treatment and prevention of AK, SCC in situ, and SCC."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "38783539"
+        }
+      ]
+    },
+    {
+      "uid": "39162820",
+      "title": "Actinic keratosis metrics.",
+      "fulljournalname": "Archives of dermatological research",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Sarah E Burstein"
+        },
+        {
+          "name": "Howard Maibach"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Actinic keratosis (AK) is a common precancerous skin condition predominantly affecting older males with fair skin and significant UV exposure. The clinical significance of AK is related to its potential for malignant transformation and progression to squamous cell carcinoma (SCC). Accurate diagnosis of AK is essential for adequate treatment, evaluation of therapeutic efficacy, and mitigating the risk of developing SCC. However, clinician variability due to the subjective nature of current diagnostic tools presents significant challenges to achieving consistent and reliable AK diagnoses. Thus, there is no universally accepted standard for measuring AK.This review evaluates current methods for evaluating and diagnosing AK, focusing on clinician variability through inter- and intraobserver agreement. Eight peer-reviewed studies investigating the reliability of various approaches for AK evaluation show substantial variability in interobserver or intraobserver agreement, with most methods demonstrating only slight to moderate reliability. Some suggest that consensus discussions and simplified rating scales can modestly improve diagnostic reliability. However, remaining variability and the lack of a universally accepted standard for measuring AK underscore the need for more robust and standardized diagnostic and evaluation methods.The review emphasizes the need for improved diagnostic tools and standardized methods to enhance the accuracy and reliability of AK assessments. It also proposes applying a novel examination approach using 1,3-dihydroxyacetone (DHA) staining which may improve the visualization and identification of AK lesions. Advancements in these areas have significant potential, promising better clinical practices and patient outcomes in AK management."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "39162820"
+        }
+      ]
+    },
+    {
+      "uid": "24075552",
+      "title": "Pink lesions.",
+      "fulljournalname": "Dermatologic clinics",
+      "pubdate": "2013",
+      "authors": [
+        {
+          "name": "Jason Giacomel"
+        },
+        {
+          "name": "Iris Zalaudek"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Dermoscopy (dermatoscopy or surface microscopy) is an ancillary dermatologic tool that in experienced hands can improve the accuracy of diagnosis of a variety of benign and malignant pigmented skin tumors. The early and more accurate diagnosis of nonpigmented, or pink, tumors can also be assisted by dermoscopy. This review focuses on the dermoscopic diagnosis of pink lesions, with emphasis on blood vessel morphology and pattern. A 3-step algorithm is presented, which facilitates the timely and more accurate diagnosis of pink tumors and subsequently guides the management for such lesions."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "24075552"
+        }
+      ]
+    },
+    {
+      "uid": "38351246",
+      "title": "Field Cancerization Therapies for the Management of Actinic Keratosis: An Updated Review.",
+      "fulljournalname": "American journal of clinical dermatology",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Ishita Aggarwal"
+        },
+        {
+          "name": "Carolina Puyana"
+        },
+        {
+          "name": "Neha Chandan"
+        },
+        {
+          "name": "Nathan Jetter"
+        },
+        {
+          "name": "Maria Tsoukas"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Field cancerization theory highlights that the skin surrounding actinic keratoses (AK) is also at increased risk for possible malignant transformation; thus, field-directed treatments may both reduce the risk of AK recurrence and potentially reduce the risk of development of cutaneous squamous cell carcinoma (cSCC). Photodynamic therapy (PDT) with either aminolevulinic acid (ALA) or methylaminolevulinate (MAL), as well as topical treatments such as 5-fluorouracil (5-FU), diclofenac gel, piroxicam, imiquimod, and ingenol mebutate, have all shown higher efficacy than vehicle treatments. PDT is widely recognized for its high efficacy; however, concerns for associated pain have driven new studies to begin using alternative illumination and pretreatment techniques, including lasers. Among topical treatments, a combination of 5-FU and salicylic acid (5-FU-SA) has shown to be the most effective but also causes the most adverse reactions. Tirbanibulin, a new topical agent approved for use in 2020, boasts a favorable safety profile in comparison with imiquimod, 5-FU, and diclofenac. Meanwhile, ingenol mebutate is no longer recommended for the treatment of AKs due to concerns for increased risk of cSCC development. Moving forward, an increasing number of studies push for standardization of outcome measures to better predict risk of future cSCC and use of more effective measures of cost to better guide patients. Here, we present an updated and comprehensive narrative review both confirming the efficacy of previously mentioned therapies as well as highlighting new approaches to PDT and discussing the use of lasers and novel topical treatments for treatment of AK."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "38351246"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=actinic+keratosis+squamous+cell+carcinoma+review+management"
+}

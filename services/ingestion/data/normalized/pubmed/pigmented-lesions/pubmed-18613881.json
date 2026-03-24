@@ -1,0 +1,30 @@
+{
+  "title": "Dermoscopy: basic concepts.",
+  "source": "International journal of dermatology",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2008,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/18613881/",
+  "pmid": "18613881",
+  "authors": [
+    "Gabriella Campos-do-Carmo",
+    "Marcia Ramos-e-Silva"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "pigmented lesions",
+    "dermoscopy"
+  ],
+  "disease_tags": [
+    "melanoma",
+    "nevus",
+    "seborrheic keratosis"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Dermoscopy is a very useful technique for the analysis of pigmented skin lesions. It represents a link between clinical and histological views, permitting an earlier diagnosis of skin melanoma. It also helps in the diagnosis of many other pigmented skin lesions, such as seborrheic keratosis, pigmented basal cell carcinoma, hemangioma, blue nevus, atypical nevus, and mole, which can often clinically simulate melanoma. In this article, dermoscopy is reviewed from its history to the basic concepts of the interpretation of dermoscopic images. The goal is to introduce this subject to those not yet familiar with it, in order to instigate and encourage the training and practice of this technique of growing importance for everyday usage."
+    }
+  ]
+}

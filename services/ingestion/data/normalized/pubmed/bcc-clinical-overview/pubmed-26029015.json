@@ -1,0 +1,31 @@
+{
+  "title": "Basal cell carcinoma: pathogenesis, epidemiology, clinical features, diagnosis, histopathology, and management.",
+  "source": "The Yale journal of biology and medicine",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2015,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/26029015/",
+  "pmid": "26029015",
+  "authors": [
+    "Alexander G Marzuka",
+    "Samuel E Book"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "bcc",
+    "non-melanoma skin cancer",
+    "guideline",
+    "management"
+  ],
+  "disease_tags": [
+    "basal cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Basal cell carcinoma (BCC) is the most common malignancy. Exposure to sunlight is the most important risk factor. Most, if not all, cases of BCC demonstrate overactive Hedgehog signaling. A variety of treatment modalities exist and are selected based on recurrence risk, importance of tissue preservation, patient preference, and extent of disease. The pathogenesis, epidemiology, clinical features, diagnosis, histopathology, and management of BCC will be discussed in this review."
+    }
+  ]
+}

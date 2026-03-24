@@ -7,10 +7,10 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.chat import router as chat_router
-from app.api.routes.citations import router as citations_router
 from app.api.routes.images import router as images_router
 from app.api.routes.system import router as system_router
 from app.core.config import settings
+from app.services.chat_runtime import chat_runtime
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("dermai.api")
@@ -28,6 +28,20 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+async def log_runtime_configuration() -> None:
+    retrieval_status = chat_runtime.retrieval.status()
+    logger.info(
+        "Retrieval backend=%s qdrant_url=%s collection=%s reranker_enabled=%s corpus_documents=%s corpus_chunks=%s",
+        retrieval_status["backend"],
+        retrieval_status["qdrant_url"] or "embedded-local-store",
+        retrieval_status["qdrant_collection"],
+        retrieval_status["reranker_enabled"],
+        retrieval_status["corpus_documents"],
+        retrieval_status["corpus_chunks"],
+    )
 
 
 @app.middleware("http")
@@ -71,4 +85,3 @@ async def log_requests(request: Request, call_next):
 app.include_router(system_router)
 app.include_router(chat_router)
 app.include_router(images_router)
-app.include_router(citations_router)

@@ -1,0 +1,32 @@
+{
+  "title": "Cutaneous Squamous Cell Carcinoma: A Review of High-Risk and Metastatic Disease.",
+  "source": "American journal of clinical dermatology",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2016,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/27358187/",
+  "pmid": "27358187",
+  "authors": [
+    "Kyle A Burton",
+    "Kurt A Ashack",
+    "Amor Khachemoune"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "scc",
+    "non-melanoma skin cancer",
+    "guideline",
+    "management"
+  ],
+  "disease_tags": [
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Non-melanoma skin cancer represents one-third of all malignancies and its incidence is expected to rise until the year 2040. Cutaneous squamous cell carcinoma (cSCC) represents 20\u00a0% of all non-melanoma skin cancer and is a deadly threat owing to its ability to metastasize to any organ in the body. Therefore, a better understanding of cSCC is essential to strengthen preventative measures and curable treatment options. Currently, research demonstrates that cSCC is diagnosed at a rate of 15-35 per 100,000 people and is expected to increase 2-4\u00a0% per year. With respect to metastatic cSCC, this disease is more common in men; people over the age of 75\u00a0years; and inhabitants of the south and mid-west USA. In 2010, the American Joint Committee on Cancer updated the Cancer Staging Manual's primary tumor designation to now include high-risk factors; however, factors such as immunosuppression and tumor recurrence were not included. Other staging systems such as Brigham and Women's Hospital have allowed for increased stratification of cSCC. High-risk cSCC is defined as a cSCC that is staged as N0, extends beyond basement membrane, and has high-risk features associated with sub-clinical metastasis. High-risk features are depth of invasion (>2\u00a0mm), poor histological differentiation, high-risk anatomic location (face, ear, pre/post auricular, genitalia, hands, and feet), perineural involvement, recurrence, multiple cSCC tumors, and immunosuppression. Epidermal growth factor receptor and nuclear active\u00a0I\u03baB kinase (IKK) expression are also predictive of metastatic capabilities. Clinically, the initial lesions of a cSCC tumor can present as a painless plaque-like or verrucous tumor that can ultimately progress to being large, necrotic, and infected. Tumors can also present with paresthesias or lymphadenopathy depending on the location involved. With respect to prognosis, metastatic cSCC is lethal, with several large studies demonstrating a mortality rate of >70\u00a0%. Therefore, treatment of metastatic cSCC is difficult and depends on the location involved and extent of metastasis. Treatment options include surgery, radiation therapy, chemotherapy, and any combination of the above. Surgery alone can be used for metastatic cSCC treatment, but is not as effective as surgery in conjunction with radiation therapy. Radiation therapy has some success as a monotherapy in low-risk or cosmetically sensitive areas such as the external ear, eyelid or nose. According to the 2013 National Comprehensive Cancer Network Guidelines, cisplatin as a single agent or combined with 5-fluorouracil hold the strongest support for the treatment of metastatic cSCC; however, the supporting evidence is inconsistent and a curative chemotherapeutic approach is still lacking. Epidermal growth factor receptor inhibitors are a newer class of agents being used in metastatic cSCC and hold some promise as a therapy for this disease. Other areas of interest in finding curative treatments for metastatic cSCC include p53, hypermethylation of specific genes, chromatin remodeling genes, and the RAS/RTK/PI3K pathway. This review addresses the epidemiology, staging, risk factors, clinical presentation, management, and new trends in the treatment of high-risk and metastatic cSCC."
+    }
+  ]
+}

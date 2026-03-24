@@ -1,0 +1,202 @@
+{
+  "dataset_id": "scc-clinical-overview",
+  "query": "cutaneous squamous cell carcinoma clinical features management review",
+  "count": 76,
+  "ids": [
+    "38791879",
+    "27358187",
+    "30321581",
+    "35149987",
+    "35158897"
+  ],
+  "articles": [
+    {
+      "uid": "38791879",
+      "title": "Cutaneous Squamous Cell Carcinoma: An Updated Review.",
+      "fulljournalname": "Cancers",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Rina Jiang"
+        },
+        {
+          "name": "Mike Fritz"
+        },
+        {
+          "name": "Syril Keena T Que"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Representing the second most common skin cancer, the incidence and disease burden of cutaneous squamous cell carcinoma (cSCC) continues to increase. Surgical excision of the primary site effectively cures the majority of cSCC cases. However, an aggressive subset of cSCC persists with clinicopathological features that are indicative of higher recurrence, metastasis, and mortality risks. Acceleration of these features is driven by a combination of genetic and environmental factors. The past several years have seen remarkable progress in shaping the treatment landscape for advanced cSCC. Risk stratification and clinical management is a top priority. This review provides an overview of the current perspectives on cSCC with a focus on staging, treatment, and maintenance strategies, along with future research directions."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "38791879"
+        }
+      ]
+    },
+    {
+      "uid": "27358187",
+      "title": "Cutaneous Squamous Cell Carcinoma: A Review of High-Risk and Metastatic Disease.",
+      "fulljournalname": "American journal of clinical dermatology",
+      "pubdate": "2016",
+      "authors": [
+        {
+          "name": "Kyle A Burton"
+        },
+        {
+          "name": "Kurt A Ashack"
+        },
+        {
+          "name": "Amor Khachemoune"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Non-melanoma skin cancer represents one-third of all malignancies and its incidence is expected to rise until the year 2040. Cutaneous squamous cell carcinoma (cSCC) represents 20\u00a0% of all non-melanoma skin cancer and is a deadly threat owing to its ability to metastasize to any organ in the body. Therefore, a better understanding of cSCC is essential to strengthen preventative measures and curable treatment options. Currently, research demonstrates that cSCC is diagnosed at a rate of 15-35 per 100,000 people and is expected to increase 2-4\u00a0% per year. With respect to metastatic cSCC, this disease is more common in men; people over the age of 75\u00a0years; and inhabitants of the south and mid-west USA. In 2010, the American Joint Committee on Cancer updated the Cancer Staging Manual's primary tumor designation to now include high-risk factors; however, factors such as immunosuppression and tumor recurrence were not included. Other staging systems such as Brigham and Women's Hospital have allowed for increased stratification of cSCC. High-risk cSCC is defined as a cSCC that is staged as N0, extends beyond basement membrane, and has high-risk features associated with sub-clinical metastasis. High-risk features are depth of invasion (>2\u00a0mm), poor histological differentiation, high-risk anatomic location (face, ear, pre/post auricular, genitalia, hands, and feet), perineural involvement, recurrence, multiple cSCC tumors, and immunosuppression. Epidermal growth factor receptor and nuclear active\u00a0I\u03baB kinase (IKK) expression are also predictive of metastatic capabilities. Clinically, the initial lesions of a cSCC tumor can present as a painless plaque-like or verrucous tumor that can ultimately progress to being large, necrotic, and infected. Tumors can also present with paresthesias or lymphadenopathy depending on the location involved. With respect to prognosis, metastatic cSCC is lethal, with several large studies demonstrating a mortality rate of >70\u00a0%. Therefore, treatment of metastatic cSCC is difficult and depends on the location involved and extent of metastasis. Treatment options include surgery, radiation therapy, chemotherapy, and any combination of the above. Surgery alone can be used for metastatic cSCC treatment, but is not as effective as surgery in conjunction with radiation therapy. Radiation therapy has some success as a monotherapy in low-risk or cosmetically sensitive areas such as the external ear, eyelid or nose. According to the 2013 National Comprehensive Cancer Network Guidelines, cisplatin as a single agent or combined with 5-fluorouracil hold the strongest support for the treatment of metastatic cSCC; however, the supporting evidence is inconsistent and a curative chemotherapeutic approach is still lacking. Epidermal growth factor receptor inhibitors are a newer class of agents being used in metastatic cSCC and hold some promise as a therapy for this disease. Other areas of interest in finding curative treatments for metastatic cSCC include p53, hypermethylation of specific genes, chromatin remodeling genes, and the RAS/RTK/PI3K pathway. This review addresses the epidemiology, staging, risk factors, clinical presentation, management, and new trends in the treatment of high-risk and metastatic cSCC."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "27358187"
+        }
+      ]
+    },
+    {
+      "uid": "30321581",
+      "title": "Dermoscopy and dermatopathology correlates of cutaneous neoplasms.",
+      "fulljournalname": "Journal of the American Academy of Dermatology",
+      "pubdate": "2019",
+      "authors": [
+        {
+          "name": "Oriol Y\u00e9lamos"
+        },
+        {
+          "name": "Ralph P Braun"
+        },
+        {
+          "name": "Konstantinos Liopyris"
+        },
+        {
+          "name": "Zachary J Wolner"
+        },
+        {
+          "name": "Katrin Kerl"
+        },
+        {
+          "name": "Pedram Gerami"
+        },
+        {
+          "name": "Ashfaq A Marghoob"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Dermoscopy is increasingly used by clinicians (dermatologists, family physicians, podiatrists, doctors of osteopathic medicine, etc) to inform clinical management decisions. Dermoscopic findings or images provided to pathologists offer important insight into the clinician's diagnostic and management thought process. However, with limited dermoscopic training in dermatopathology, dermoscopic descriptions and images provided in the requisition form provide little value to pathologists. Most dermoscopic structures have direct histopathologic correlates, and therefore dermoscopy can act as an excellent communication bridge between the clinician and the pathologist. In the first article in this continuing medical education series, we review dermoscopic features and their histopathologic correlates."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "30321581"
+        }
+      ]
+    },
+    {
+      "uid": "35149987",
+      "title": "Porocarcinoma: a review.",
+      "fulljournalname": "Clinical and experimental dermatology",
+      "pubdate": "2022",
+      "authors": [
+        {
+          "name": "Jilse Joshy"
+        },
+        {
+          "name": "Khaylen Mistry"
+        },
+        {
+          "name": "Nick J Levell"
+        },
+        {
+          "name": "Birgitta van Bodegraven"
+        },
+        {
+          "name": "Sally Vernon"
+        },
+        {
+          "name": "Neil Rajan"
+        },
+        {
+          "name": "Paul Craig"
+        },
+        {
+          "name": "Zoe Claire Venables"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "From the first report in 1969 to the present day, diagnosis of eccrine porocarcinoma, also known simply as porocarcinoma (PC), remains a challenge. This review presents a concise update of the history, pathogenesis, epidemiology, diagnosis, management and prognosis of this rare sweat gland neoplasm. PC differentiates towards the intraepidermal spiral ducts in the eccrine gland, is more common in people aged >\u200960\u2009years and often affects the head, neck and legs. PC presents as a dome-shaped papule, plaque or nodule growing over weeks to months. The exact incidence of PC is unknown but appears to be rising. Diagnosis is difficult because of variable presentations and similar clinical and histological features to cutaneous squamous cell carcinoma. Management involves removal of the tumour, usually using wide local excision or Mohs micrographic surgery. Prognosis is poor, with PC recurring after surgery in 35% of cases. Given the lack of standardized protocols and risk profiles, further studies would help improve the understanding of PC."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "35149987"
+        }
+      ]
+    },
+    {
+      "uid": "35158897",
+      "title": "Update on Management Recommendations for Advanced Cutaneous Squamous Cell Carcinoma.",
+      "fulljournalname": "Cancers",
+      "pubdate": "2022",
+      "authors": [
+        {
+          "name": "Jes\u00fas Garc\u00eda-Foncillas"
+        },
+        {
+          "name": "Antonio Tejera-Vaquerizo"
+        },
+        {
+          "name": "Onofre Sanmart\u00edn"
+        },
+        {
+          "name": "Federico Rojo"
+        },
+        {
+          "name": "Javier Mestre"
+        },
+        {
+          "name": "Salvador Mart\u00edn"
+        },
+        {
+          "name": "Ignacio Azinovic"
+        },
+        {
+          "name": "Ricard Mes\u00eda"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Cutaneous squamous cell carcinoma (cSCC) is the second most common form of skin cancer, the incidence of which has risen over the last years. Although cSCC rarely metastasizes, early detection and treatment of primary tumours are critical to limit progression and local invasion. Several prognostic factors related to patients' clinicopathologic profile and tumour features have been identified as high-risk markers and included in the stratification scales, but their association with regional control or survival is uncertain. Therefore, decision-making on the diagnosis and management of cSCC should be made based on each individual patient's characteristics. Recent advances in non-invasive imaging techniques and molecular testing have enhanced clinical diagnostic accuracy. Surgical excision is the mainstay of local treatment, whereas radiotherapy (RT) is recommended for patients with inoperable disease or in specific circumstances. Novel systemic treatments including immunotherapies and targeted therapies have changed the therapeutic landscape for cSCC. The anti-PD-1 agent cemiplimab is currently the only FDA/EMA-approved first-line therapy for patients with locally advanced or metastatic cSCC who are not candidates for curative surgery or RT. Given the likelihood of recurrence and the increased risk of developing multiple cSCC, close follow-up should be performed during the first years of treatment and continued long-term surveillance is warranted."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "35158897"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=cutaneous+squamous+cell+carcinoma+clinical+features+management+review"
+}

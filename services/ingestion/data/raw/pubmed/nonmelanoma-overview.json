@@ -1,0 +1,182 @@
+{
+  "dataset_id": "nonmelanoma-overview",
+  "query": "nonmelanoma skin cancer basal cell squamous cell review triage",
+  "count": 4,
+  "ids": [
+    "39768310",
+    "31734824",
+    "38339329",
+    "41322906"
+  ],
+  "articles": [
+    {
+      "uid": "39768310",
+      "title": "Artificial Intelligence in the Non-Invasive Detection of Melanoma.",
+      "fulljournalname": "Life (Basel, Switzerland)",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Banu \u0130smail Mendi"
+        },
+        {
+          "name": "Kivanc Kose"
+        },
+        {
+          "name": "Lauren Fleshner"
+        },
+        {
+          "name": "Richard Adam"
+        },
+        {
+          "name": "Bijan Safai"
+        },
+        {
+          "name": "Banu Farabi"
+        },
+        {
+          "name": "Mehmet Fatih Atak"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Skin cancer is one of the most prevalent cancers worldwide, with increasing incidence. Skin cancer is typically classified as melanoma or non-melanoma skin cancer. Although melanoma is less common than basal or squamous cell carcinomas, it is the deadliest form of cancer, with nearly 8300 Americans expected to die from it each year. Biopsies are currently the gold standard in diagnosing melanoma; however, they can be invasive, expensive, and inaccessible to lower-income individuals. Currently, suspicious lesions are triaged with image-based technologies, such as dermoscopy and confocal microscopy. While these techniques are useful, there is wide inter-user variability and minimal training for dermatology residents on how to properly use these devices. The use of artificial intelligence (AI)-based technologies in dermatology has emerged in recent years to assist in the diagnosis of melanoma that may be more accessible to all patients and more accurate than current methods of screening. This review explores the current status of the application of AI-based algorithms in the detection of melanoma, underscoring its potential to aid dermatologists in clinical practice. We specifically focus on AI application in clinical imaging, dermoscopic evaluation, algorithms that can distinguish melanoma from non-melanoma skin cancers, and in vivo skin imaging devices."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "39768310"
+        }
+      ]
+    },
+    {
+      "uid": "31734824",
+      "title": "Recognising Skin Cancer in Primary Care.",
+      "fulljournalname": "Advances in therapy",
+      "pubdate": "2020",
+      "authors": [
+        {
+          "name": "Owain T Jones"
+        },
+        {
+          "name": "Charindu K I Ranmuthu"
+        },
+        {
+          "name": "Per N Hall"
+        },
+        {
+          "name": "Garth Funston"
+        },
+        {
+          "name": "Fiona M Walter"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "Abstract",
+          "text": "Skin cancer, including melanoma, basal cell carcinoma and cutaneous squamous cell carcinoma, has one of the highest global incidences of any form of cancer. In 2016 more than 16,000 people were diagnosed with melanoma in the UK. Over the last decade the incidence of melanoma has increased by 50% in the UK, and about one in ten melanomas are diagnosed at a late stage. Among the keratinocyte carcinomas (previously known as non-melanoma skin cancers), basal cell carcinoma is the most common cancer amongst Caucasian populations. The main risk factor for all skin cancer is exposure to ultraviolet radiation-more than 80% are considered preventable. Primary care clinicians have a vital role to play in detecting and managing patients with skin lesions suspected to be skin cancer, as timely diagnosis and treatment can improve patient outcomes, particularly for melanoma. However, detecting skin cancer can be challenging, as common non-malignant skin lesions such as seborrhoeic keratoses share features with less common skin cancers. Given that more than 80% of skin cancers are attributed to ultraviolet (UV) exposure, primary care clinicians can also play an important role in skin cancer prevention. This article is one of a series discussing cancer prevention and detection in primary care. Here we focus on the most common types of skin cancer: melanoma, squamous cell carcinoma and basal cell carcinoma. We describe the main risk factors and prevention advice. We summarise key guidance on the symptoms and signs of skin cancers and their management, including their initial assessment and referral. In addition, we review emerging technologies and diagnostic aids which may become available for use in primary care in the near future, to aid the triage of suspicious skin lesions."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "31734824"
+        }
+      ]
+    },
+    {
+      "uid": "38339329",
+      "title": "Insights, Advantages, and Barriers of Teledermatology vs. Face-to-Face Dermatology for the Diagnosis and Follow-Up of Non-Melanoma Skin Cancer: A Systematic Review.",
+      "fulljournalname": "Cancers",
+      "pubdate": "2024",
+      "authors": [
+        {
+          "name": "Georgios Nikolakis"
+        },
+        {
+          "name": "Aristeidis G Vaiopoulos"
+        },
+        {
+          "name": "Ioannis Georgopoulos"
+        },
+        {
+          "name": "Eleni Papakonstantinou"
+        },
+        {
+          "name": "George Gaitanis"
+        },
+        {
+          "name": "Christos C Zouboulis"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "BACKGROUND",
+          "text": "Teledermatology is employed in the diagnosis and follow-up of skin cancer and its use was intensified during and after the COVID-19 pandemic. At the same time, demographic changes result in an overall increase in non-melanoma skin cancer and skin precancerous lesions. The aim of this study was to elucidate the role of teledermatology in comparison to conventional face-to-face dermatology for such lesions and determine the advantages and limitations of this workflow for patients and physicians."
+        },
+        {
+          "label": "METHODS",
+          "text": "Research was performed using relevant keywords in MEDLINE and CENTRAL. Relevant articles were chosen following a predetermined standardized extraction form."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Diagnostic accuracy and interrater/intrarater agreement can be considered comparable-although lower-than in-person consultation. Improvement of particular features such as image quality, medical history availability, and teledermoscopy can further increase accuracy. Further aspects of limitations and advantages (mean time-to-assessment, time-to-treatment, cost-effectiveness) are discussed."
+        },
+        {
+          "label": "CONCLUSIONS",
+          "text": "Teledermatology has comparable diagnostic accuracy with face-to-face dermatology and can be utilized both for the effective triage of non-melanocytic epithelial tumors and precancerous lesions, as well as the follow-up. Easy access to dermatologic consultation with shorter mean times to diagnostic biopsy and/or treatment coupled with cost-effectiveness could compensate for the lower sensitivity of teledermatology and offer easier access to medical care to the affected populations."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "38339329"
+        }
+      ]
+    },
+    {
+      "uid": "41322906",
+      "title": "Outcomes of Urgent Suspected Cancer, Urgent, and Routine Skin Lesion Referrals Assessed via Teledermoscopy Service: A Retrospective Analysis.",
+      "fulljournalname": "Cureus",
+      "pubdate": "2025",
+      "authors": [
+        {
+          "name": "Sirag Elaribi"
+        },
+        {
+          "name": "Ausama Atwan"
+        }
+      ],
+      "abstract_sections": [
+        {
+          "label": "BACKGROUND",
+          "text": "Teledermoscopy facilitates the remote assessment of skin lesions by combining high-quality clinical and dermoscopic images. This technology enhances early detection of skin cancers by allowing specialists to evaluate lesions without the need for an in-person consultation. Beyond improving diagnostic accuracy, teledermoscopy supports efficient triage, prioritising patients who require urgent attention while reducing unnecessary clinic visits. Additionally, it enables longitudinal digital monitoring of lesions, allowing clinicians to track subtle changes over time, improve patient follow-up, and guide timely interventions."
+        },
+        {
+          "label": "AIM",
+          "text": "To evaluate diagnostic outcomes and management decisions from primary care skin lesion referrals assessed via teledermoscopy across urgent suspected cancer (USC), urgent, and routine pathways."
+        },
+        {
+          "label": "METHODS",
+          "text": "A retrospective review was conducted of 1,203 patients referred to the South East Wales teledermoscopy service between September 2022 and December 2023. Referral letters and images were assessed, and cases were categorised by referral urgency. Final diagnoses and management outcomes were recorded, including discharge, minor operative procedures (MOPs), face-to-face (FTF) reviews, onward referrals, digital monitoring, or patient-initiated follow-up (PIFU)."
+        },
+        {
+          "label": "RESULTS",
+          "text": "Nearly half of referrals were USC, with the remainder split between urgent and routine pathways. Seborrhoeic keratosis was the most frequent diagnosis, accounting for over a quarter of cases, while basal cell carcinoma was the most common malignancy identified. Probable melanomas and squamous cell carcinomas were concentrated in the USC pathway, but were also detected in urgent and routine referrals. Management outcomes varied: most routine cases were discharged, while a greater proportion of USC referrals required MOPs or FTF review. Digital monitoring was applied selectively and often led to safe discharge or escalation to FTF review. Histological confirmation of melanoma or SCC occurred in a small but essential proportion across all pathways."
+        },
+        {
+          "label": "CONCLUSION",
+          "text": "Teledermoscopy safely reduced unnecessary FTF consultations and efficiently identified high-risk lesions. Most USC referrals were ultimately benign, highlighting the need to strengthen diagnostic confidence in primary care."
+        }
+      ],
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "value": "41322906"
+        }
+      ]
+    }
+  ],
+  "source": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils?db=pubmed&term=nonmelanoma+skin+cancer+basal+cell+squamous+cell+review+triage"
+}

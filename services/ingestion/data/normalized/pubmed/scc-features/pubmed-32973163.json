@@ -1,0 +1,40 @@
+{
+  "title": "Epidermolysis bullosa.",
+  "source": "Nature reviews. Disease primers",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2020,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/32973163/",
+  "pmid": "32973163",
+  "authors": [
+    "Ajoy Bardhan",
+    "Leena Bruckner-Tuderman",
+    "Iain L C Chapple",
+    "Jo-David Fine",
+    "Natasha Harper",
+    "Cristina Has",
+    "Thomas M Magin",
+    "M Peter Marinkovich",
+    "John F Marshall",
+    "John A McGrath",
+    "Jemima E Mellerio",
+    "Rex Polson",
+    "Adrian H Heagerty"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "scc",
+    "non-melanoma skin cancer"
+  ],
+  "disease_tags": [
+    "squamous cell carcinoma",
+    "skin cancer"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Epidermolysis bullosa (EB) is an inherited, heterogeneous group of rare genetic dermatoses characterized by mucocutaneous fragility and blister formation, inducible by often minimal trauma. A broad phenotypic spectrum has been described, with potentially severe extracutaneous manifestations, morbidity and mortality. Over 30 subtypes are recognized, grouped into four major categories, based predominantly on the plane of cleavage within the skin and reflecting the underlying molecular abnormality: EB simplex, junctional EB, dystrophic EB and Kindler EB. The study of EB has led to seminal advances in our understanding of cutaneous biology. To date, pathogenetic mutations in 16 distinct genes have been implicated in EB, encoding proteins influencing cellular integrity and adhesion. Precise diagnosis is reliant on correlating clinical, electron microscopic and immunohistological features with mutational analyses. In the absence of curative treatment, multidisciplinary care is targeted towards minimizing the risk of blister formation, wound care, symptom relief and specific complications, the most feared of which - and also the leading cause of mortality - is squamous cell carcinoma. Preclinical advances in cell-based, protein replacement and gene therapies are paving the way for clinical successes with gene correction, raising hopes amongst patients and clinicians worldwide."
+    }
+  ]
+}

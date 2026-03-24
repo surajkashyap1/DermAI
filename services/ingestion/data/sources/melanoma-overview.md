@@ -1,8 +1,12 @@
 # Melanoma Overview
 Source: DermAI Clinical Notes
+SourceType: curated_note
+Authority: internal_seed
+Audience: clinician
 Year: 2026
 Href: https://dermai.local/sources/melanoma-overview
 Tags: melanoma, basics, skin cancer
+DiseaseTags: melanoma, skin cancer
 
 ## Definition
 Melanoma is a type of skin cancer that arises from pigment-producing melanocytes. It is clinically important because it can become invasive and spread if it is not recognized and evaluated early.

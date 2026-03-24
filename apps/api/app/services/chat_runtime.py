@@ -3,7 +3,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from uuid import uuid4
 
-from app.schemas.contracts import ChatResponse, ImageAnalysis, SessionMessage, SessionResponse
+from app.schemas.contracts import (
+    ChatResponse,
+    ImageAnalysis,
+    SessionMessage,
+)
 from app.services.chat_workflow import ChatWorkflow
 from app.services.providers import get_chat_provider
 from app.services.retrieval import RetrievalService
@@ -32,23 +36,6 @@ class SessionStore:
 
     def add_message(self, session_id: str, message: SessionMessage) -> None:
         self._sessions[session_id].messages.append(message)
-
-    def to_response(self, session_id: str) -> SessionResponse:
-        state = self._sessions.get(session_id)
-        if not state:
-            return SessionResponse(
-                sessionId=session_id,
-                messages=[],
-                imageAnalysisAvailable=False,
-                imageAnalysis=None,
-            )
-
-        return SessionResponse(
-            sessionId=state.session_id,
-            messages=state.messages,
-            imageAnalysisAvailable=state.image_analysis_available,
-            imageAnalysis=state.image_analysis,
-        )
 
     def attach_image_analysis(self, session_id: str, image_analysis: ImageAnalysis) -> None:
         state = self.get_or_create(session_id)
@@ -89,7 +76,8 @@ class ChatRuntime:
                 "session_history": history_text,
                 "image_analysis": session.image_analysis.model_dump() if session.image_analysis else None,
                 "trace": [],
-            }
+            },
+            config=self.workflow.checkpoint_config(session.session_id),
         )
 
         assistant_message = SessionMessage(

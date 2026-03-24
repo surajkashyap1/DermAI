@@ -12,6 +12,11 @@
     "dev:web": "npm run dev --workspace @dermai/web",
     "build:web": "npm run build --workspace @dermai/web",
     "lint:web": "npm run lint --workspace @dermai/web",
-    "typecheck:web": "npm run typecheck --workspace @dermai/web"
+    "typecheck:web": "npm run typecheck --workspace @dermai/web",
+    "infra:qdrant:up": "docker compose -f infra/compose/docker-compose.yml up -d qdrant",
+    "infra:qdrant:refresh": "docker compose -f infra/compose/docker-compose.yml up -d --force-recreate qdrant",
+    "infra:qdrant:down": "docker compose -f infra/compose/docker-compose.yml stop qdrant",
+    "infra:qdrant:logs": "docker compose -f infra/compose/docker-compose.yml logs -f qdrant",
+    "infra:qdrant:ps": "docker compose -f infra/compose/docker-compose.yml ps qdrant"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "title": "Blue lesions.",
+  "source": "Dermatologic clinics",
+  "source_type": "pubmed_json",
+  "authority_level": "external_reference",
+  "audience": "clinician",
+  "year": 2013,
+  "href": "https://pubmed.ncbi.nlm.nih.gov/24075551/",
+  "pmid": "24075551",
+  "authors": [
+    "Caterina Longo",
+    "Alon Scope",
+    "Aimilios Lallas",
+    "Iris Zalaudek",
+    "Elvira Moscarella",
+    "Stefano Gardini",
+    "Giuseppe Argenziano",
+    "Giovanni Pellacani"
+  ],
+  "doc_type": "json",
+  "topic_tags": [
+    "pigmented lesions",
+    "dermoscopy"
+  ],
+  "disease_tags": [
+    "melanoma",
+    "nevus",
+    "seborrheic keratosis"
+  ],
+  "sections": [
+    {
+      "title": "Abstract",
+      "text": "Blue color is found in a wide range of malignant and benign melanocytic and nonmelanocytic lesions and in lesions that result from penetration of exogenous materials, such as radiation or amalgam tattoo or traumatic penetration of particles. Discriminating between different diagnostic entities that display blue color relies on careful patient examination and lesion assessment. Dermoscopically, the extent, distribution, and patterns created by blue color can help diagnose lesions with specificity and differentiate between benign and malignant entities. This article provides an overview of the main diagnoses whereby blue color can be found, providing simple management rules for these lesions."
+    }
+  ]
+}

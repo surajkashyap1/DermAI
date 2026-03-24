@@ -1,8 +1,12 @@
 # Melanoma Warning Signs
 Source: DermAI Clinical Notes
+SourceType: curated_note
+Authority: internal_seed
+Audience: clinician
 Year: 2026
 Href: https://dermai.local/sources/melanoma-warning-signs
 Tags: melanoma, triage, lesions
+DiseaseTags: melanoma, skin cancer
 
 ## ABCDE features
 The ABCDE framework is commonly used to flag lesions that deserve prompt dermatologist review. Clinicians look for asymmetry, irregular borders, multiple colors, diameter growth, and recent evolution in shape, size, color, or symptoms.
