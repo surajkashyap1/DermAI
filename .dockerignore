@@ -1,4 +1,5 @@
-.DS_Store
+.git
+.gitignore
 .next
 node_modules
 dist
@@ -12,14 +13,11 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
-*.tsbuildinfo
 .env
 .env.local
 .env.*.local
 apps/web/.next
 apps/web/node_modules
-apps/api/.env
-apps/api/uploads
 apps/api/generated
 generated
 services/eval/artifacts

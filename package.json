@@ -1,0 +1,17 @@
+{
+  "name": "dermai",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "build:corpus": "python services/ingestion/build_corpus.py",
+    "dev:web": "npm run dev --workspace @dermai/web",
+    "build:web": "npm run build --workspace @dermai/web",
+    "lint:web": "npm run lint --workspace @dermai/web",
+    "typecheck:web": "npm run typecheck --workspace @dermai/web"
+  }
+}

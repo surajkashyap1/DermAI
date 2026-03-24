@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: dermai-api
+    runtime: docker
+    dockerfilePath: ./apps/api/Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DERMAI_ENV
+        value: production
+      - key: DERMAI_VERSION
+        value: 0.1.0
+      - key: DERMAI_COMMIT_SHA
+        value: render
+      - key: DERMAI_SERVICE_NAME
+        value: dermai-api
+      - key: DERMAI_GROQ_MODEL
+        value: llama-3.1-8b-instant
+      - key: DERMAI_GROQ_API_KEY
+        sync: false
