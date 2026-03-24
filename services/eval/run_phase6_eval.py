@@ -6,7 +6,6 @@ import json
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
-from unittest.mock import patch
 
 from PIL import Image
 
@@ -17,8 +16,6 @@ if str(API_ROOT) not in sys.path:
     sys.path.insert(0, str(API_ROOT))
 
 from app.services.chat_runtime import chat_runtime  # noqa: E402
-from app.services.vision import settings as vision_settings  # noqa: E402
-from app.services.vision import VisionPrediction  # noqa: E402
 from app.services.vision import vision_service  # noqa: E402
 
 
@@ -81,25 +78,7 @@ async def run_eval() -> dict[str, object]:
     image = Image.new("RGB", (144, 144), (126, 92, 84))
     buffer = io.BytesIO()
     image.save(buffer, format="PNG")
-    if vision_settings.vision_api_key:
-        analysis = vision_service.analyze(buffer.getvalue(), "image/png")
-    else:
-        fake_result = (
-            "melanoma",
-            [
-                VisionPrediction(
-                    label="melanoma",
-                    confidence=0.82,
-                    rationale="Hosted classifier probability for melanoma.",
-                )
-            ],
-            0.82,
-        )
-        with patch(
-            "app.services.vision.vision_service._classify_with_hosted_model",
-            return_value=fake_result,
-        ):
-            analysis = vision_service.analyze(buffer.getvalue(), "image/png")
+    analysis = vision_service.analyze(buffer.getvalue(), "image/png")
     session = chat_runtime.sessions.get_or_create(None)
     chat_runtime.sessions.attach_image_analysis(session.session_id, analysis)
 

@@ -12,7 +12,7 @@ DermAI is a full-stack dermatology web app with:
 - Frontend: Next.js, TypeScript, Tailwind CSS
 - Backend: FastAPI, LangGraph
 - Retrieval: Qdrant, dense + sparse retrieval, reranking
-- Vision: hosted skin-lesion inference via Hugging Face API
+- Vision: local HAM10000-based skin-lesion model loaded from Hugging Face
 - LLM: Groq-backed generation with local fallback behavior
 
 ## Current Product Surface
@@ -56,10 +56,9 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 DERMAI_GROQ_API_KEY=your_key_here
 DERMAI_GROQ_MODEL=llama-3.1-8b-instant
 DERMAI_QDRANT_URL=http://localhost:6333
-DERMAI_VISION_API_KEY=your_hugging_face_token
-DERMAI_VISION_MODEL_ID=sreejith782/Dermacare_Skin_Lesion_classification
-DERMAI_VISION_API_BASE_URL=https://router.huggingface.co/hf-inference/models
-DERMAI_VISION_TIMEOUT_SECONDS=60
+DERMAI_VISION_MODEL_REPO_ID=devatreya/skin-lesion-resnet50
+DERMAI_VISION_MODEL_FILENAME=resnet50_best.h5
+DERMAI_VISION_MODEL_THRESHOLD=0.5
 ```
 
 If `DERMAI_GROQ_API_KEY` is not set, the backend falls back to a deterministic local extractive answer mode.
@@ -108,7 +107,7 @@ Open:
 ## Notes
 
 - The first image upload can be slower because the vision model is downloaded and cached locally.
-- Image upload requires a Hugging Face token for hosted inference.
+- The first image upload can be slower because the local vision model is downloaded and cached on first use.
 - Qdrant should be running locally for the intended retrieval path.
 - The app is chat-first, but image upload stays attached to the active session for follow-up questions.
 
