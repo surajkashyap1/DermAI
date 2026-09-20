@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dermai"
+version = "1.0.0"
+description = "Dermatology chatbot with HAM10000 skin-cancer classification, Grad-CAM, and LangChain + FAISS RAG."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["dermai", "dermai.classifier", "dermai.rag"]

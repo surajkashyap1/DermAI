@@ -1,60 +1,50 @@
 import type {
   ChatRequest,
   ChatResponse,
-  UploadImageResponse,
+  ClassificationResponse,
 } from "@dermai/shared";
 
 const apiBaseUrl =
   process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, "") ?? "http://localhost:8000";
 
 export class ApiError extends Error {
-  requestId?: string;
   status?: number;
 
-  constructor(message: string, status?: number, requestId?: string) {
+  constructor(message: string, status?: number) {
     super(message);
     this.name = "ApiError";
     this.status = status;
-    this.requestId = requestId;
   }
 }
 
-async function safeFetch<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${apiBaseUrl}${path}`, {
-    ...init,
+async function parseError(response: Response): Promise<string> {
+  let message = `Request failed with status ${response.status}`;
+  try {
+    const payload = (await response.json()) as { detail?: string };
+    if (payload.detail) message = payload.detail;
+  } catch {}
+  return message;
+}
+
+export async function sendChat(payload: ChatRequest): Promise<ChatResponse> {
+  const response = await fetch(`${apiBaseUrl}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
     cache: "no-store",
   });
-
-  const requestId = response.headers.get("x-request-id") ?? undefined;
-
-  if (!response.ok) {
-    let message = `Request failed with status ${response.status}`;
-    try {
-      const payload = (await response.json()) as { detail?: string };
-      if (payload.detail) {
-        message = payload.detail;
-      }
-    } catch {}
-
-    throw new ApiError(message, response.status, requestId);
-  }
-
-  return (await response.json()) as T;
+  if (!response.ok) throw new ApiError(await parseError(response), response.status);
+  return (await response.json()) as ChatResponse;
 }
 
-export async function sendChat(payload: ChatRequest) {
-  return safeFetch<ChatResponse>("/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-}
-
-export async function uploadImage(formData: FormData) {
-  return safeFetch<UploadImageResponse>("/upload-image", {
+export async function classifyImage(file: File): Promise<ClassificationResponse> {
+  const formData = new FormData();
+  formData.append("file", file);
+  const response = await fetch(`${apiBaseUrl}/classify`, {
     method: "POST",
     body: formData,
+    cache: "no-store",
   });
+  if (!response.ok) throw new ApiError(await parseError(response), response.status);
+  return (await response.json()) as ClassificationResponse;
 }

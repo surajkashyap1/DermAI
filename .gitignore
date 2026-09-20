@@ -1,25 +1,33 @@
 .DS_Store
-.next
-node_modules
-dist
-coverage
-.venv
-.venv311
-__pycache__
-.pytest_cache
-.mypy_cache
-.ruff_cache
+
+# Python
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
+.venv/
+.venv*/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+.next/
 *.tsbuildinfo
+
+# Secrets
 .env
 .env.local
 .env.*.local
-apps/web/.next
-apps/web/node_modules
-apps/api/.env
-apps/api/uploads
-apps/api/generated
-generated
-services/eval/artifacts
+
+# Generated FAISS index (rebuilt on first run) + model/embedding caches
+faiss_index/
+.hf_cache/
+
+# Downloaded datasets
+data/ham10000/
+
+# Local agent/session dir
+.claude/

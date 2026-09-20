@@ -1,0 +1,7 @@
+# Extra dependencies used only for training the HAM10000 CNN.
+# Install with:  pip install -r requirements.txt -r requirements-train.txt
+-r requirements.txt
+
+pandas==2.2.3
+scikit-learn==1.5.2
+kagglehub==0.3.4

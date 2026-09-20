@@ -1,0 +1,22 @@
+# DermAI — Streamlit dermatology assistant
+# Core app
+streamlit==1.40.2
+python-dotenv==1.0.1
+pillow==11.0.0
+numpy==1.26.4
+
+# Deep learning / classifier (HAM10000 7-class CNN + Grad-CAM)
+tensorflow==2.17.0
+matplotlib==3.9.2
+
+# Retrieval-Augmented Generation (LangChain + FAISS)
+langchain==0.3.7
+langchain-community==0.3.5
+langchain-huggingface==0.1.2
+langchain-text-splitters==0.3.2
+faiss-cpu==1.9.0
+sentence-transformers==3.3.1
+pypdf==5.1.0
+
+# Optional hosted LLM for grounded generation (falls back to extractive if unset)
+langchain-groq==0.2.1
